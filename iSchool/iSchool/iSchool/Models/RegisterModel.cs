@@ -31,7 +31,7 @@
                 tbl.Password = model.Password;
                 _db.TblRegistration.Add(tbl);
                 await _db.SaveChangesAsync();
-                await Email(model);
+                 Email(model);
                 return true;
 
             }
@@ -41,7 +41,7 @@
                 throw;
             }
         }
-        public async Task<bool> Email(SignupModel model)
+        public  bool Email(SignupModel model)
         {
             try
             {

@@ -9,7 +9,7 @@ namespace iSchool.Repository
     public interface IRegister
     {
         Task<bool> Registeraion(SignupModel model);
-        Task<bool> Email(SignupModel model);
+        bool Email(SignupModel model);
 
         bool Emailcheck(SignupModel model);
 
