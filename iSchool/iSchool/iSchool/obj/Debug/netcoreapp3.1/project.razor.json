@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\masoo\\Desktop\\iSchool\\iSchool\\iSchool\\iSchool.csproj",
+  "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\iSchool.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14392,22 +14392,22 @@
   "RootNamespace": "iSchool",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\masoo\\Desktop\\iSchool\\iSchool\\iSchool\\Views\\SignUp\\Signup.cshtml",
-      "TargetPath": "Views\\SignUp\\Signup.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\masoo\\Desktop\\iSchool\\iSchool\\iSchool\\Views\\Login\\Login.cshtml",
+      "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\Login\\Login.cshtml",
       "TargetPath": "Views\\Login\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\masoo\\Desktop\\iSchool\\iSchool\\iSchool\\Views\\Home\\Index.cshtml",
+      "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\SignUp\\Signup.cshtml",
+      "TargetPath": "Views\\SignUp\\Signup.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\masoo\\Desktop\\iSchool\\iSchool\\iSchool\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
