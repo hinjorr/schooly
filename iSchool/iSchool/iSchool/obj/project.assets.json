@@ -864,6 +864,18 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
+      },
+      "Westwind.AspNetCore.LiveReload/0.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -2133,6 +2145,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Westwind.AspNetCore.LiveReload/0.3.0": {
+      "sha512": "VAy1fWMU6UfrjeROYgBr8gKc5owE2f8O8LVC9Mu/5KfC6Y3ugOyJEujk+lf1LUte3gvVa64BpjtcyjstcMqLDw==",
+      "type": "package",
+      "path": "westwind.aspnetcore.livereload/0.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net5.0/Westwind.AspNetCore.LiveReload.dll",
+        "lib/net5.0/Westwind.AspNetCore.LiveReload.xml",
+        "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.dll",
+        "lib/netcoreapp3.1/Westwind.AspNetCore.LiveReload.xml",
+        "westwind.aspnetcore.livereload.0.3.0.nupkg.sha512",
+        "westwind.aspnetcore.livereload.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -2140,7 +2168,8 @@
       "Microsoft.AspNetCore.Mvc.Formatters.Xml >= 2.2.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 3.1.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.9",
-      "Pomelo.EntityFrameworkCore.MySql >= 3.2.4"
+      "Pomelo.EntityFrameworkCore.MySql >= 3.2.4",
+      "WestWind.AspnetCore.LiveReload >= 0.3.0"
     ]
   },
   "packageFolders": {
@@ -2199,6 +2228,10 @@
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[3.2.4, )"
+          },
+          "WestWind.AspnetCore.LiveReload": {
+            "target": "Package",
+            "version": "[0.3.0, )"
           }
         },
         "imports": [

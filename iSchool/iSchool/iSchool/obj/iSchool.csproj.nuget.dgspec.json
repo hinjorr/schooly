@@ -57,6 +57,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[3.2.4, )"
+            },
+            "WestWind.AspnetCore.LiveReload": {
+              "target": "Package",
+              "version": "[0.3.0, )"
             }
           },
           "imports": [

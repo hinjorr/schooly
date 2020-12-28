@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "12z2qZIi5uxs6jiuF6Vtwa2d2WNGdNNYUPBSQ+4fAQd0Y7iNH+/gjoCHPT81YfdCCq1RME1s1kf1snYAWh8Smw==",
+  "dgSpecHash": "+Z78SUCX2cJqN9zdpxiIuE1cieBDZC6fpCrHaNB9PBVZZygQq30/jMFMewnotd3/WFsHxHfsOinhKYqo8GSCGQ==",
   "success": true,
   "projectFilePath": "D:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\iSchool.csproj",
   "expectedPackageFiles": [
@@ -67,7 +67,8 @@
     "C:\\Users\\masoo\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "C:\\Users\\masoo\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\masoo\\.nuget\\packages\\system.text.json\\4.7.0\\system.text.json.4.7.0.nupkg.sha512",
-    "C:\\Users\\masoo\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512"
+    "C:\\Users\\masoo\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512",
+    "C:\\Users\\masoo\\.nuget\\packages\\westwind.aspnetcore.livereload\\0.3.0\\westwind.aspnetcore.livereload.0.3.0.nupkg.sha512"
   ],
   "logs": []
 }

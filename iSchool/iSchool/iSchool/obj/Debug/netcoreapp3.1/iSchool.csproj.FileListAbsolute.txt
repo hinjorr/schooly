@@ -359,3 +359,4 @@ D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\iSchool.csproj.C
 D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\iSchool.dll
 D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\iSchool.pdb
 D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\iSchool.genruntimeconfig.cache
+D:\repo\schooly\iSchool\iSchool\iSchool\bin\Debug\netcoreapp3.1\Westwind.AspNetCore.LiveReload.dll

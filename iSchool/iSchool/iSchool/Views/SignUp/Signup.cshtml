@@ -26,15 +26,12 @@
     <link href="~/Assest/css/style.css" rel="stylesheet">
 </head>
 <style>
-img {
+    img {
         margin-left: 100px;
         padding: 5px;
         width: 150px;
-}
-     
- 
-}
-                    
+    }
+    
 </style>
 
 <body class="signup-page">
@@ -61,13 +58,13 @@ img {
                     <span class="input-group-addon">
                         <i class="material-icons">lock</i>
                     </span>
-                    
+
                     <div class="form-line">
                         <input type="password" id="txtpassword" class="form-control" name="password" minlength="6" placeholder="Password" required>
-                  
+
                     </div>
-                   
-       
+
+
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">
@@ -92,18 +89,32 @@ img {
         </div>
     </div>
 
+   
+
     <!-- Jquery Core Js -->
     <script src="~/Assest/plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
     <script src="~/Assest/plugins/bootstrap/js/bootstrap.js"></script>
 
+    <!-- Slimscroll Plugin Js -->
+    <script src="~/Assest/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+
+    <!-- Bootstrap Notify Plugin Js -->
+    <script src="~/Assest/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
     <!-- Waves Effect Plugin Js -->
     <script src="~/Assest/plugins/node-waves/waves.js"></script>
 
+    <!-- Custom Js -->
+    <script src="~/Assest/js/admin.js"></script>
+    <script src="~/PageScript/iSchoolApp.js"></script>
+
+
     <!-- Validation Plugin Js -->
     <script src="~/Assest/plugins/jquery-validation/jquery.validate.js"></script>
-    
+
     <!-- Custom Js -->
     <script src="~/Assest/js/admin.js"></script>
     <script src="~/Assest/js/pages/examples/sign-up.js"></script>
@@ -112,74 +123,73 @@ img {
         $(document).ready(function () {
 
 
-         $("#btnsubmit").click(function () {
-                var SignupModel = {
-                    Email: $("#txtemail").val(),
-                    Password: $("#txtpassword").val(),
-                };
-                console.log(SignupModel);
-                $.ajax({
-                    type: 'Post',
-                    url: '/SignUp/Signuped',
-                    data: SignupModel,
-                    success: function (resp) {
-                        console.log(resp)
-                    }
+            $("#btnsubmit").click(function () {
+                
+                if ($("#txtemail").val() == null || $("#txtemail").val() == "" ) {
+                    showNotification("danger", "Please fill all fields");
+                }
+                else if ($("#txtpassword").val() == null || $("#txtpassword").val() == "") {
+                    showNotification("danger", "Please fill all fields");
+                }
+                else if ($("#confirmpassword").val() == null || $("#confirmpassword").val() == "") {
+                    showNotification("danger", "Please fill all fields");
+                }
+                else {
+                    var SignupModel = {
+                        Email: $("#txtemail").val(),
+                        Password: $("#txtpassword").val(),
+                    };
+                    console.log(SignupModel);
+                    $.ajax({
+                        type: 'Post',
+                        url: '/SignUp/Signuped',
+                        data: SignupModel,
+                        success: function (resp) {
+                            showNotification("success", resp);
+                        }
 
-                });
+                    });
+                }
+
             });
 
             $("#txtemail").change(function () {
-                 var SignupModel = {
+                var SignupModel = {
                     Email: $("#txtemail").val()
                 };
                 $.ajax({
 
                     type: "post",
-                     url: '/SignUp/emailcheck',
-                    data:SignupModel,
-                    success:function(resp){
-                        if(resp==true)
-                        {
+                    url: '/SignUp/emailcheck',
+                    data: SignupModel,
+                    success: function (resp) {
+                        if (resp == true) {
                             $("#txtemail").val("");
-                            console.log("email already exit");
+                            showNotification("danger", "email already exit");
                         }
-                        
+
                     }
                 });
             });
-            	$("#confirmpassword").change(function(){
-                    var newpass=$("#txtpassword").val();
-                    var confirmpass=$("#confirmpassword").val();
-                    if(newpass != confirmpass)
-                    {
-                        $("#confirmpassword").val("");
-                        console.log("passoword not matched");
-                    }
-                    
-                });
+            $("#confirmpassword").change(function () {
+                var newpass = $("#txtpassword").val();
+                var confirmpass = $("#confirmpassword").val();
+                if (newpass != confirmpass) {
+                    $("#confirmpassword").val("");
+                    showNotification("danger", "password not matched");
+                }
 
-         $("#txtemail").change(function(){
-                   var getemail=$("#txtemail").val();
-                   var regex = /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-                   if(!regex.test(getemail)){ 
-                          $("#txtemail").val("");
-                        console.log("invalid"); 
-                     }    
-                });
-                   
-               
+            });
 
-
-
-
-
-
-
-
-
-
-       });
+            $("#txtemail").change(function () {
+                var getemail = $("#txtemail").val();
+                var regex = /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!regex.test(getemail)) {
+                    $("#txtemail").val("");
+                    showNotification("danger", "invalid email");
+                }
+            });
+        });
 
     </script>
 

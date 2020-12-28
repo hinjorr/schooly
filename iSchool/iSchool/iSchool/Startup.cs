@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Westwind.AspNetCore.LiveReload;
 namespace iSchool
 {
     public class Startup
@@ -31,7 +31,7 @@ namespace iSchool
             services.AddControllersWithViews();
             services.AddScoped<IRegister, RegisterModel>();
             services.AddRazorPages().AddRazorRuntimeCompilation();
-
+            services.AddLiveReload();
            
         }
 
@@ -41,6 +41,7 @@ namespace iSchool
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseLiveReload();
             }
             else
             {
