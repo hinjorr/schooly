@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace iSchool.dbModels
 {
-    public partial class TblSchoolconfig
+    public partial class Tblschoolconfig
     {
         public int Id { get; set; }
         public string Logo { get; set; }

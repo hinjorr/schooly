@@ -2149,11 +2149,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\masoo\\Desktop\\iSchool\\iSchool\\iSchool\\iSchool.csproj",
+      "projectUniqueName": "D:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\iSchool.csproj",
       "projectName": "iSchool",
-      "projectPath": "c:\\Users\\masoo\\Desktop\\iSchool\\iSchool\\iSchool\\iSchool.csproj",
+      "projectPath": "D:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\iSchool.csproj",
       "packagesPath": "C:\\Users\\masoo\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\masoo\\Desktop\\iSchool\\iSchool\\iSchool\\obj\\",
+      "outputPath": "D:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\masoo\\AppData\\Roaming\\NuGet\\NuGet.Config",

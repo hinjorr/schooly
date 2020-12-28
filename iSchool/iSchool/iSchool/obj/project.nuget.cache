@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zuerV8Uu+2yhXiMSPONy4FD5aEh0NdQYcy/IIbNLq0e8IC+dQXcGp+VPKnC4lP4pL1uspsmC7vk2ljhkmW/yqg==",
+  "dgSpecHash": "12z2qZIi5uxs6jiuF6Vtwa2d2WNGdNNYUPBSQ+4fAQd0Y7iNH+/gjoCHPT81YfdCCq1RME1s1kf1snYAWh8Smw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\masoo\\Desktop\\iSchool\\iSchool\\iSchool\\iSchool.csproj",
+  "projectFilePath": "D:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\iSchool.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\masoo\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\masoo\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

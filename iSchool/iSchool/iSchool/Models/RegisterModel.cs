@@ -23,13 +23,13 @@
         {
             try
             {
-                TblRegistration tbl = new TblRegistration();
+                Tblregistration tbl = new Tblregistration();
                 tbl.CreatedDate = DateTime.Now;
                 tbl.Email = model.Email;
                 tbl.Ip = model.Ip;
-                tbl.IsActive = true;
+                tbl.IsActive = 1;
                 tbl.Password = model.Password;
-                _db.TblRegistration.Add(tbl);
+                _db.Tblregistration.Add(tbl);
                 await _db.SaveChangesAsync();
                  Email(model);
                 return true;
@@ -70,7 +70,7 @@
         {
             try
             {
-                var getemail = _db.TblRegistration.Where(x => x.Email == model.Email).FirstOrDefault();
+                var getemail = _db.Tblregistration.Where(x => x.Email == model.Email).FirstOrDefault();
                 if (getemail !=null)
                 {
                    return true;
