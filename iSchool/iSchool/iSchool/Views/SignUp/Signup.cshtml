@@ -145,7 +145,7 @@
                             if (resp=true)
                             {
                                 showNotification("success", "Registration Successful!");
-                                 location.reload(); 
+                                 $(location).attr('href','/Login/Login');
                             }
                             else{
                                  showNotification("danger", "Registration failed!");

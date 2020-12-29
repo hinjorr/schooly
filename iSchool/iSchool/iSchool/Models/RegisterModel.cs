@@ -7,9 +7,7 @@
     using System.Net.Mail;
     using System.Threading.Tasks;
 
-    /// <summary>
-    /// Defines the <see cref="RegisterModel" />.
-    /// </summary>
+  
     public class RegisterModel : IRegister
     {
 

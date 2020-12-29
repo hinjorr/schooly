@@ -18,7 +18,6 @@ function showNotification(colorName, text) {
     if (animateEnter === null || animateEnter === '') { animateEnter = 'animated fadeInDown'; }
     if (animateExit === null || animateExit === '') { animateExit = 'animated fadeOutUp'; }
     var allowDismiss = true;
-
     $.notify({
         message: text
     },

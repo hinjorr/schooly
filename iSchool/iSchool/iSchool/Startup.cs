@@ -1,4 +1,5 @@
 using iSchool.dbModels;
+using iSchool.Models;
 using iSchool.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +31,7 @@ namespace iSchool
             services.AddDbContext<AMCDbContext>(x => x.UseMySql(Configuration.GetConnectionString("CommonConnString")));
             services.AddControllersWithViews();
             services.AddScoped<IRegister, RegisterModel>();
+            services.AddScoped<ILogin, LoginCredentialsModel>();
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddLiveReload();
            

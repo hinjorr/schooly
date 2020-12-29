@@ -75,6 +75,8 @@
 
     <!-- Jquery Core Js -->
     <script src="~/Assest/plugins/jquery/jquery.min.js"></script>
+   
+    <script src="~/Assest/plugins/bootstrap-notify/bootstrap-notify.js"></script>
 
     <!-- Bootstrap Core Js -->
     <script src="~/Assest/plugins/bootstrap/js/bootstrap.js"></script>
@@ -88,26 +90,29 @@
     <!-- Custom Js -->
     <script src="~/Assest/js/admin.js"></script>
     <script src="~/Assest/js/pages/examples/sign-in.js"></script>
+    <script src="~/PageScript/iSchoolApp.js"></script>
 
     <script>
         $(document).ready(function () {
             $("#btnLogin").click(function () {
                 var loginModel = {
-                    UserName: $("#txtUserName").val(),
+                    Email: $("#txtUserName").val(),
                     Password: $("#txtPassword").val(),
                 };
-                console.log(loginModel);
                 $.ajax({
                     type: 'Post',
                     url: '/Login/LoginRR',
                     data: loginModel,
                     success: function (resp) {
-                        console.log(resp)
-                    },
-                   @* error: function () {
+                        if(resp==true){
+                            showNotification("success","Login Successful");
+                           $(location).attr('href','/Home/Index');
 
-                    }*@
-
+                        }
+                        else{
+                            showNotification("danger","Invalid Email/Password");
+                        }
+                    }
 
                 });
 
