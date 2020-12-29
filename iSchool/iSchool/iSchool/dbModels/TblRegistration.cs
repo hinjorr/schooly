@@ -10,6 +10,6 @@ namespace iSchool.dbModels
         public string Password { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Ip { get; set; }
-        public ulong IsActive { get; set; }
+        public bool IsActive { get; set; }
     }
 }

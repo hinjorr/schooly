@@ -22,6 +22,7 @@ namespace iSchool.dbModels
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseMySql("server=localhost;port=3306;user=root;password=1234;database=schooly", x => x.ServerVersion("10.5.8-mariadb"));
             }
         }
@@ -51,10 +52,6 @@ namespace iSchool.dbModels
                     .HasDefaultValueSql("'0'")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
-
-                entity.Property(e => e.IsActive)
-                    .HasColumnType("mediumint(9)")
-                    .HasDefaultValueSql("'0'");
 
                 entity.Property(e => e.Password)
                     .IsRequired()

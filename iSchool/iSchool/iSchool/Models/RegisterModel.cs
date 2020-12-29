@@ -27,7 +27,7 @@
                 tbl.CreatedDate = DateTime.Now;
                 tbl.Email = model.Email;
                 tbl.Ip = model.Ip;
-                tbl.IsActive = 1;
+                tbl.IsActive = true;
                 tbl.Password = model.Password;
                 _db.Tblregistration.Add(tbl);
                 await _db.SaveChangesAsync();

@@ -74,13 +74,10 @@
                         <input type="password" id="confirmpassword" class="form-control" name="confirm" minlength="6" placeholder="Confirm Password" required>
                     </div>
                 </div>
-                <div class="form-group">
-                    <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
-                    <label for="terms">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>
-                </div>
+               
 
                 <button id="btnsubmit" class="btn btn-block btn-lg bg-pink waves-effect" type="submit">SIGN UP</button>
-
+            
                 <div class="m-t-25 m-b--5 align-center">
                     @Html.ActionLink("You already have a membership?", "Login", "Login")
                 </div>
@@ -126,26 +123,34 @@
             $("#btnsubmit").click(function () {
                 
                 if ($("#txtemail").val() == null || $("#txtemail").val() == "" ) {
-                    showNotification("danger", "Please fill all fields");
+                    showNotification("danger", "Please fill Email field!");
                 }
                 else if ($("#txtpassword").val() == null || $("#txtpassword").val() == "") {
-                    showNotification("danger", "Please fill all fields");
+                    showNotification("danger", "Please fill Password field!");
                 }
                 else if ($("#confirmpassword").val() == null || $("#confirmpassword").val() == "") {
-                    showNotification("danger", "Please fill all fields");
+                    showNotification("danger", "Please fill Confirm Password field!");
                 }
                 else {
                     var SignupModel = {
                         Email: $("#txtemail").val(),
                         Password: $("#txtpassword").val(),
                     };
-                    console.log(SignupModel);
+                    
                     $.ajax({
                         type: 'Post',
                         url: '/SignUp/Signuped',
                         data: SignupModel,
                         success: function (resp) {
-                            showNotification("success", resp);
+                            if (resp=true)
+                            {
+                                showNotification("success", "Registration Successful!");
+                                 location.reload(); 
+                            }
+                            else{
+                                 showNotification("danger", "Registration failed!");
+                            }
+                            
                         }
 
                     });
