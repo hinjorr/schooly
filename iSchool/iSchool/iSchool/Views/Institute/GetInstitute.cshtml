@@ -1,0 +1,138 @@
+@{
+    ViewData["Title"] = "GetInstitute";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                               Add Institute Info Here
+                            </h2>
+                           
+                        </div>
+                        <div class="body">
+                            <div class="row clearfix">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            
+                                            <input type="text" id="instname" class="form-control" placeholder="Institute Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="phone" class="form-control" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="website" class="form-control" placeholder="Website">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row clearfix">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="address" class="form-control" placeholder="Address">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="country" class="form-control" placeholder="Country">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="logo" class="form-control" placeholder="Logo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="tagline" class="form-control" placeholder="Tag Line">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="addfees" class="form-control" placeholder="Admission Fees">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="Rules" class="form-control" placeholder="Rules & Regulations">
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                       <button type="button" id="btnsubmit" class="btn btn-primary waves-effect">Submit</button>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <!-- #END# Multi Column -->
+        
+        
+
+        
+<script>
+    $(document).ready(function(){
+        $("#btnsubmit").click(function(){
+          var  InstituteModel={
+                Name: $("#instname").val(),
+                Phone: $("#phone").val(),
+                Website: $("#website").val(),
+                Address: $("#address").val(),
+                Country: $("#country").val(),
+                Logo: $("#logo").val(),
+                Moto: $("#tagline").val(),
+                Admissionfee: $("#addfees").val(),
+                RulesRegulations: $("#Rules").val(),
+            };
+            $.ajax({
+                type:'Post',
+                url:'/Institute/PostInstitue',
+                data:InstituteModel,
+                success:function(resp){
+                    if(resp=true){
+                         showNotification("success","Login Successful");
+                    }
+                    else{
+                        showNotification("success","Login Successful");
+                    }
+                },
+            });
+
+
+        });
+
+
+
+    });
+</script>

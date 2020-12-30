@@ -14,5 +14,6 @@ namespace iSchool.dbModels
         public string Website { get; set; }
         public string Admissionfee { get; set; }
         public string RulesRegulations { get; set; }
+        public int Country { get; set; }
     }
 }

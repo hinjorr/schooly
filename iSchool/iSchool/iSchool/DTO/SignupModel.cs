@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace iSchool.Models
+namespace iSchool.DTO
 {
     public class SignupModel
     {
@@ -13,7 +13,5 @@ namespace iSchool.Models
         public DateTime CreatedDate { get; set; }
         public string Ip { get; set; }
         public bool IsActive { get; set; }
-
-        public string emailchk { get; set; }
     }
 }

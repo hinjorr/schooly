@@ -14407,6 +14407,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\Institute\\GetInstitute.cshtml",
+      "TargetPath": "Views\\Institute\\GetInstitute.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

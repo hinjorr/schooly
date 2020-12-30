@@ -32,6 +32,7 @@ namespace iSchool
             services.AddControllersWithViews();
             services.AddScoped<IRegister, RegisterModel>();
             services.AddScoped<ILogin, LoginCredentialsModel>();
+            services.AddScoped<IInstitue, InstituteCredentials>();
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddLiveReload();
            

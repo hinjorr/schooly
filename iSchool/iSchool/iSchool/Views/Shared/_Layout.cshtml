@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    
+
     <link href="~/Assest/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
@@ -31,6 +31,10 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="~/Assest/css/themes/all-themes.css" rel="stylesheet" />
+
+
+    <!-- Jquery Core Js -->
+    <script src="~/Assest/plugins/jquery/jquery.min.js"></script>
 </head>
 
 <body class="theme-red">
@@ -301,12 +305,17 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active">
-                        <a href="index.html">
+                        <a href="/Home/Index">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
                     </li>
-                   
+                    <li class="active">
+                        <a href="/Institute/GetInstitute">
+                            <i class="material-icons">school</i>
+                            <span>Institute Info</span>
+                        </a>
+                    </li>
 
 
 
@@ -325,15 +334,13 @@
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->
-        
+
     </section>
 
     <section class="content">
-       @RenderBody()
+        @RenderBody()
     </section>
 
-    <!-- Jquery Core Js -->
-    <script src="~/Assest/plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
     <script src="~/Assest/plugins/bootstrap/js/bootstrap.js"></script>
@@ -346,33 +353,10 @@
 
     <!-- Waves Effect Plugin Js -->
     <script src="~/Assest/plugins/node-waves/waves.js"></script>
-
-    <!-- Jquery CountTo Plugin Js -->
-    <script src="~/Assest/plugins/jquery-countto/jquery.countTo.js"></script>
-
-    <!-- Morris Plugin Js -->
-    <script src="~/Assest/plugins/raphael/raphael.min.js"></script>
-    <script src="~/Assest/plugins/morrisjs/morris.js"></script>
-
-    <!-- ChartJs -->
-    <script src="~/Assest/plugins/chartjs/Chart.bundle.js"></script>
-
-    <!-- Flot Charts Plugin Js -->
-    <script src="~/Assest/plugins/flot-charts/jquery.flot.js"></script>
-    <script src="~/Assest/plugins/flot-charts/jquery.flot.resize.js"></script>
-    <script src="~/Assest/plugins/flot-charts/jquery.flot.pie.js"></script>
-    <script src="~/Assest/plugins/flot-charts/jquery.flot.categories.js"></script>
-    <script src="~/Assest/plugins/flot-charts/jquery.flot.time.js"></script>
-
-    <!-- Sparkline Chart Plugin Js -->
-    <script src="~/Assest/plugins/jquery-sparkline/jquery.sparkline.js"></script>
-
     <!-- Custom Js -->
     <script src="~/Assest/js/admin.js"></script>
-    <script src="~/Assest/js/pages/index.js"></script>
-
-    <!-- Demo Js -->
-    <script src="~/Assest/js/demo.js"></script>
+    <script src="~/Assest/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="~/PageScript/iSchoolApp.js"></script>
 </body>
 
 </html>

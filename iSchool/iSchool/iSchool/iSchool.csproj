@@ -17,9 +17,14 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>   
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />   
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />   
     <PackageReference Include="WestWind.AspnetCore.LiveReload" Version="0.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Institute\" />
   </ItemGroup>
 
 </Project>
