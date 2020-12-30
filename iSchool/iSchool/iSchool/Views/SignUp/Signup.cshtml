@@ -107,7 +107,7 @@
     <!-- Custom Js -->
     <script src="~/Assest/js/admin.js"></script>
     <script src="~/PageScript/iSchoolApp.js"></script>
-
+ 
 
     <!-- Validation Plugin Js -->
     <script src="~/Assest/plugins/jquery-validation/jquery.validate.js"></script>
@@ -115,88 +115,91 @@
     <!-- Custom Js -->
     <script src="~/Assest/js/admin.js"></script>
     <script src="~/Assest/js/pages/examples/sign-up.js"></script>
+    
+ <script>
+     $(document).ready(function () {
 
-    <script>
-        $(document).ready(function () {
 
-
-            $("#btnsubmit").click(function () {
-                
-                if ($("#txtemail").val() == null || $("#txtemail").val() == "" ) {
-                    showNotification("danger", "Please fill Email field!");
-                }
-                else if ($("#txtpassword").val() == null || $("#txtpassword").val() == "") {
-                    showNotification("danger", "Please fill Password field!");
-                }
-                else if ($("#confirmpassword").val() == null || $("#confirmpassword").val() == "") {
-                    showNotification("danger", "Please fill Confirm Password field!");
-                }
-                else {
-                    var SignupModel = {
-                        Email: $("#txtemail").val(),
-                        Password: $("#txtpassword").val(),
-                    };
-                    
-                    $.ajax({
-                        type: 'Post',
-                        url: '/SignUp/Signuped',
-                        data: SignupModel,
-                        success: function (resp) {
-                            if (resp=true)
-                            {
-                                showNotification("success", "Registration Successful!");
-                                 $(location).attr('href','/Login/Login');
-                            }
-                            else{
-                                 showNotification("danger", "Registration failed!");
-                            }
-                            
-                        }
-
-                    });
-                }
-
-            });
-
-            $("#txtemail").change(function () {
-                var SignupModel = {
-                    Email: $("#txtemail").val()
-                };
-                $.ajax({
-
-                    type: "post",
-                    url: '/SignUp/emailcheck',
-                    data: SignupModel,
-                    success: function (resp) {
-                        if (resp == true) {
-                            $("#txtemail").val("");
-                            showNotification("danger", "email already exit");
-                        }
-
+    $("#btnsubmit").click(function () {
+        
+        if ($("#txtemail").val() == null || $("#txtemail").val() == "" ) {
+            showNotification("danger", "Please fill Email field!");
+        }
+        else if ($("#txtpassword").val() == null || $("#txtpassword").val() == "") {
+            showNotification("danger", "Please fill Password field!");
+        }
+        else if ($("#confirmpassword").val() == null || $("#confirmpassword").val() == "") {
+            showNotification("danger", "Please fill Confirm Password field!");
+        }
+        else {
+            var SignupModel = {
+                Email: $("#txtemail").val(),
+                Password: $("#txtpassword").val(),
+            };
+            
+            $.ajax({
+                type: 'Post',
+                url: '/SignUp/Signuped',
+                data: SignupModel,
+                success: function (resp) {
+                    if (resp=true)
+                    {
+                        showNotification("success", "Registration Successful!");
+                        $("#txtemail").val("");
+                        $("#txtpassword").val("");
+                        $("#confirmpassword").val("");
                     }
-                });
-            });
-            $("#confirmpassword").change(function () {
-                var newpass = $("#txtpassword").val();
-                var confirmpass = $("#confirmpassword").val();
-                if (newpass != confirmpass) {
-                    $("#confirmpassword").val("");
-                    showNotification("danger", "password not matched");
+                    else{
+                         showNotification("danger", "Registration failed!");
+                    }
+                    
                 }
 
             });
+        }
 
-            $("#txtemail").change(function () {
-                var getemail = $("#txtemail").val();
-                var regex = /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-                if (!regex.test(getemail)) {
+    });
+
+    $("#txtemail").change(function () {
+        var SignupModel = {
+            Email: $("#txtemail").val()
+        };
+        $.ajax({
+
+            type: "post",
+            url: '/SignUp/emailcheck',
+            data: SignupModel,
+            success: function (resp) {
+                if (resp == true) {
                     $("#txtemail").val("");
-                    showNotification("danger", "invalid email");
+                    showNotification("danger", "email already exit");
                 }
-            });
-        });
 
-    </script>
+            }
+        });
+    });
+    $("#confirmpassword").change(function () {
+        var newpass = $("#txtpassword").val();
+        var confirmpass = $("#confirmpassword").val();
+        if (newpass != confirmpass) {
+            $("#confirmpassword").val("");
+            showNotification("danger", "password not matched");
+        }
+
+    });
+
+    $("#txtemail").change(function () {
+        var getemail = $("#txtemail").val();
+        var regex = /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!regex.test(getemail)) {
+            $("#txtemail").val("");
+            showNotification("danger", "invalid email");
+        }
+    });
+});
+
+
+ </script>
 
 </body>
 
