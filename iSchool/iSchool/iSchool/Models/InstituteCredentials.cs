@@ -21,16 +21,19 @@ namespace iSchool.Models
             {
 
                 Tblschoolconfig tbl = new Tblschoolconfig();
-                tbl.Address = model.Address;
-                tbl.Admissionfee = model.Admissionfee;
                 tbl.Logo = model.Logo;
                 tbl.Name = model.Name;
-                tbl.Moto = model.Moto;
-                tbl.Phone = model.Phone;
-                tbl.Website = model.Website;
-                tbl.Address = model.Admissionfee;
-                tbl.RulesRegulations = model.RulesRegulations;
+                tbl.Address = model.Address;
                 tbl.Country = model.Country;
+                tbl.Phone = model.Phone;
+                tbl.Moto = model.Moto;
+                tbl.Website = model.Website;
+                tbl.AdmissionFee = model.AdmissionFee;
+                tbl.RulesRegulations=model.RulesRegulations;
+                tbl.TransportFee=model.TransportFee;
+                tbl.BooksFee=model.BooksFee;
+                tbl.FineFee=model.FineFee; 
+                tbl.RulesRegulations = model.RulesRegulations;
                 _db.Tblschoolconfig.Add(tbl);
                 await _db.SaveChangesAsync();
                 return true;

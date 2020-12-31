@@ -100,15 +100,20 @@ namespace iSchool.dbModels
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
-                entity.Property(e => e.Admissionfee)
-                    .IsRequired()
-                    .HasColumnType("varchar(50)")
-                    .HasDefaultValueSql("''")
-                    .HasCharSet("latin1")
-                    .HasCollation("latin1_swedish_ci");
+                entity.Property(e => e.AdmissionFee)
+                    .HasColumnName("admission_fee")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.BooksFee)
+                    .HasColumnName("books_fee")
+                    .HasColumnType("int(11)");
 
                 entity.Property(e => e.Country)
                     .HasColumnName("country")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.FineFee)
+                    .HasColumnName("Fine_fee")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.Logo)
@@ -119,7 +124,6 @@ namespace iSchool.dbModels
                     .HasCollation("latin1_swedish_ci");
 
                 entity.Property(e => e.Moto)
-                    .IsRequired()
                     .HasColumnType("varchar(50)")
                     .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
@@ -139,15 +143,21 @@ namespace iSchool.dbModels
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
+                entity.Property(e => e.RegistrationFee)
+                    .HasColumnName("registration_fee")
+                    .HasColumnType("int(11)");
+
                 entity.Property(e => e.RulesRegulations)
-                    .IsRequired()
                     .HasColumnType("varchar(50)")
                     .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
+                entity.Property(e => e.TransportFee)
+                    .HasColumnName("transport_fee")
+                    .HasColumnType("int(11)");
+
                 entity.Property(e => e.Website)
-                    .IsRequired()
                     .HasColumnType("varchar(50)")
                     .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
