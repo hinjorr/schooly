@@ -19,7 +19,6 @@ namespace iSchool.Models
         {
             try
             {
-
                 Tblschoolconfig tbl = new Tblschoolconfig();
                 tbl.Logo = model.Logo;
                 tbl.Name = model.Name;
