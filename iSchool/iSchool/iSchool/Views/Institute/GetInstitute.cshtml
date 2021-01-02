@@ -3,7 +3,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     
 }
-                               
+   
+
+              <form id="class12">                
              <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
@@ -90,14 +92,14 @@
                                     </div>
                                 </div>
                             </div>
-                       <button type="button" id="btnsubmit" class="btn btn-primary waves-effect">Submit</button>
+                       <button type="button" id="btnsubmit" class="btn btn-primary waves-effect" >Submit</button>
                         </div>
                     </div>
                     
                 </div>
                 
             </div> 
-            
+            </form> 
             <!-- #END# Multi Column -->
 
          <!-- Fees Particulars -->
@@ -168,6 +170,15 @@
         
 <script>
     $(document).ready(function(){
+
+        @* $("#class12").validate({
+            rules:{
+                instname:{
+                    required:true,
+                }
+            }
+        }); *@
+        
          var rules;
          var  addfee;
          var  regfee;
@@ -219,7 +230,9 @@
             });
 
 
-        });
+        })
+
+
 
 
 
