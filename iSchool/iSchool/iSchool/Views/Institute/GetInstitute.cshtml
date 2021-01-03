@@ -53,13 +53,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label>Country</label>
-                                            <input type="text" id="country" class="form-control" >
-                                        </div>
-                                    </div>
+                              
+                              <div class="col-sm-3">
+                                    <label>Country</label>
+                                    <select class="form-control show-tick">
+                                        <option value="">-- Please select --</option>
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                        <option value="50">50</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -100,6 +104,13 @@
                 
             </div> 
             </form> 
+
+
+
+
+
+
+            
             <!-- #END# Multi Column -->
 
          <!-- Fees Particulars -->
@@ -171,20 +182,13 @@
 <script>
     $(document).ready(function(){
 
-        @* $("#class12").validate({
-            rules:{
-                instname:{
-                    required:true,
-                }
-            }
-        }); *@
-        
-         var rules;
+        var rules;
          var  addfee;
          var  regfee;
          var transfee;
          var bokfee;
          var finefee;
+       
 
         $("#btnrules").click(function(){
              rules =$("#rulesregulations").val()
@@ -199,13 +203,30 @@
         });
 
         $("#btnsubmit").click(function(){
-          var  InstituteModel={
+
+
+        if( ($("#instname").val()=="") ){
+             showNotification("warning"," Please Provide Institute Name!!");
+        }
+        else  if( ($("#logo").val()=="") ){
+             showNotification("warning"," Please Provide Logo!!");
+        }
+         else  if( ($("#address").val()=="") ){
+             showNotification("warning"," Please Provide Address!!");
+        }
+    
+         @* else  if( ($("#country").val()==null) ){
+             showNotification("warning "," Please Provide Country!!");
+        } *@
+
+         else{
+             var  InstituteModel={
                 Name: $("#instname").val(),
                 Phone: $("#phone").val(),
                 Website: $("#website").val(),
                 Address: $("#address").val(),
                 Country: $("#country").val(),
-                Logo: $("#logo").val(),
+                Logo: $("#logo").val(), 
                 Moto: $("#tagline").val(),
                 RulesRegulations:rules,
                 AdmissionFee:addfee,
@@ -214,12 +235,13 @@
                 BooksFee:bokfee,
                 FineFee:finefee,
             };
+            
             $.ajax({
                 type:'Post',
                 url:'/Institute/PostInstitue',
                 data:InstituteModel,
                 success:function(resp){
-                    if(resp=true){
+                    if(resp==true){
                          showNotification("success","Institute Registered!");
                          @* location.reload(); *@
                     }
@@ -228,15 +250,21 @@
                     }
                 },
             });
+         }
+          
+        });
 
-
-        })
-
-
-
+         
+         
+      
+        
 
 
 
 
     });
 </script>
+
+
+
+

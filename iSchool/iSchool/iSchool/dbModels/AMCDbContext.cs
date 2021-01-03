@@ -96,7 +96,6 @@ namespace iSchool.dbModels
                 entity.Property(e => e.Address)
                     .IsRequired()
                     .HasColumnType("varchar(50)")
-                    .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
@@ -119,27 +118,23 @@ namespace iSchool.dbModels
                 entity.Property(e => e.Logo)
                     .IsRequired()
                     .HasColumnType("varchar(50)")
-                    .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
                 entity.Property(e => e.Moto)
                     .HasColumnType("varchar(50)")
-                    .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasColumnType("varchar(50)")
-                    .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
                 entity.Property(e => e.Phone)
                     .IsRequired()
                     .HasColumnType("varchar(50)")
-                    .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
@@ -149,7 +144,6 @@ namespace iSchool.dbModels
 
                 entity.Property(e => e.RulesRegulations)
                     .HasColumnType("varchar(50)")
-                    .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
@@ -159,7 +153,6 @@ namespace iSchool.dbModels
 
                 entity.Property(e => e.Website)
                     .HasColumnType("varchar(50)")
-                    .HasDefaultValueSql("''")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
             });

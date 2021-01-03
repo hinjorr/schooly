@@ -8,7 +8,7 @@ function showNotification(colorName, text) {
         colorName = 'alert-danger';
     }
     else if (colorName == "warning") {
-        colorName = 'alert-yellow';
+        colorName = 'alert-warning';
     }
     else if (colorName == "info") {
         colorName = 'alert-primary';
