@@ -1,277 +1,289 @@
 @{
     ViewData["Title"] = "GetInstitute";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
+
 }
-   
-    <link href="~/PageScript/error22.css" rel="stylesheet" />
 
-              <form id="class12">                
-             <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                               Add Institute Info Here
-                            </h2>
-                           
+
+<form>
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Add Institute Info Here
+                    </h2>
+
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Institute Name</label>
+                                    <input type="text" id="instname" class="form-control">
+                                </div>
+                            </div>
                         </div>
-                        <div class="body">
-                            <div class="row clearfix">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label>Institute Name</label>
-                                            <input type="text" id="instname" class="form-control" >
-                                        </div>
-                                         <label class="error22"></label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label>Phone</label>
-                                            <input type="text" id="phone" class="form-control">
-                                        </div>
-                                        <label class="error22"></label>
-                                    </div>
-                                </div>
-                                 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label>Website</label>
-                                            <input type="text" id="website" class="form-control" >
-                                        </div>
-                                        
-                                    </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Phone</label>
+                                    <input type="text" id="phone" class="form-control">
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Website</label>
+                                    <input type="text" id="website" class="form-control">
+                                </div>
 
-
-                            <div class="row clearfix">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label>Address</label>
-                                            <input type="text" id="address" class="form-control" >
-                                        </div>
-                                        <label class="error22"></label>
-                                    </div>
-                                </div>
-                              
-                              <div class="col-sm-3">
-                                    <label>Country</label>
-                                    <select class="form-control show-tick">
-                                        <option value="">-- Please select --</option>
-                                        <option value="10">10</option>
-                                        <option value="20">20</option>
-                                        <option value="30">30</option>
-                                        <option value="40">40</option>
-                                        <option value="50">50</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                            <label>Logo</label>
-                                            <input type="file" id="logo" name="img" accept="image/*" class="form-control">
-                                    </div>
-                                    <label class="error22"></label>
-                                </div>
                             </div>
-
-                            <div class="row clearfix">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label>Tag Line</label>
-                                            <input type="text" id="tagline" class="form-control" >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <br>
-                                        
-                                       <button type="button" class="btn btn-danger waves-effect" data-toggle="modal" data-target="#rules">Rules & Regulations</button>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <br>
-                                          <button type="button" class="btn btn-success waves-effect" data-toggle="modal" data-target="#fees">Fees Particulars</button>
-                                    </div>
-                                </div>
-                            </div>
-                       <button type="button" id="btnsubmit" class="btn btn-primary waves-effect" >Submit</button>
                         </div>
                     </div>
-                    
-                </div>
-                
-            </div> 
-            </form> 
-
-
-
-
-
-
-            
-            <!-- #END# Multi Column -->
-
-         <!-- Fees Particulars -->
-            <div class="modal fade" id="fees" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="smallModalLabel">Fee Particulars</h4>
-                        </div>
-                        <div class="modal-body">
-                                
-                                <div class="form-group">
-                                        <div class="form-line">
-                                            <label>ADMISSION FEE</label>
-                                            <input type="text" id="admissionfee" class="form-control" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label>Address</label>
+                                                <input type="text" id="address" class="form-control">
+                                            </div>
                                         </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <label>Country</label>
+                                        <select class="form-control show-tick">
+                                            <option value="">-- Please select --</option>
+                                            <option value="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="30">30</option>
+                                            <option value="40">40</option>
+                                            <option value="50">50</option>
+                                        </select>
+                                    </div>
+
                                 </div>
-                                <div class="form-group">
-                                        <div class="form-line">
-                                            <label>REGISTRATION FEE</label>
-                                            <input type="text" id="regfe" class="form-control" >
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label>Tag Line</label>
+                                                <input type="text" id="tagline" class="form-control">
+                                            </div>
                                         </div>
-                                </div>
-                                <div class="form-group">
-                                        <div class="form-line">
-                                            <label>TRANSPORT</label>
-                                            <input type="text" id="transportfee" class="form-control" >
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <br>
+                                            <button type="button" class="btn btn-danger waves-effect"
+                                                data-toggle="modal" data-target="#rules">Rules & Regulations</button>
                                         </div>
-                                </div>
-                                <div class="form-group">
-                                        <div class="form-line">
-                                            <label>BOOKS</label>
-                                            <input type="text" id="bookfee" class="form-control" >
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <br>
+                                            <button type="button" class="btn btn-success waves-effect"
+                                                data-toggle="modal" data-target="#fees">Fees Particulars</button>
                                         </div>
+                                    </div>
                                 </div>
+
+                            </div>
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                        <div class="form-line">
-                                            <label>FINE</label>
-                                            <input type="text" id="finefee" class="form-control" >
-                                        </div>
+                                    <label>Logo</label>
+                                    <input type='file' id="inputFile" />
+                                    <img style="width:200px;height:200px" id="logo" src="http://placehold.it/200x200"
+                                        alt="your image" />
                                 </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-link waves-effect" id="btnfees" data-dismiss="modal">SAVE CHANGES</button>
-                            <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"></div>
+                                <button type="button" id="btnsubmit"
+                                    class="btn btn-primary waves-effect">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</form>
 
-        <!-- Rules & Regulations -->
-            <div class="modal fade" id="rules" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="smallModalLabel">Rules & Regulations</h4>
-                        </div>
-                        <div class="modal-body">
-                           <textarea rows="13" class="form-control no-resize" id="rulesregulations"></textarea>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-link waves-effect" id="btnrules" data-dismiss="modal" >SAVE CHANGES</button>
-                            <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
-                        </div>
+<!-- #END# Multi Column -->
+
+<!-- Fees Particulars -->
+<div class="modal fade" id="fees" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="smallModalLabel">Fee Particulars</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>ADMISSION FEE</label>
+                        <input type="text" id="admissionfee" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>REGISTRATION FEE</label>
+                        <input type="text" id="regfe" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>TRANSPORT</label>
+                        <input type="text" id="transportfee" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>BOOKS</label>
+                        <input type="text" id="bookfee" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>FINE</label>
+                        <input type="text" id="finefee" class="form-control">
                     </div>
                 </div>
             </div>
-        
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" id="btnfees" data-dismiss="modal">SAVE
+                    CHANGES</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rules & Regulations -->
+<div class="modal fade" id="rules" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="smallModalLabel">Rules & Regulations</h4>
+            </div>
+            <div class="modal-body">
+                <textarea rows="13" class="form-control no-resize" id="rulesregulations"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" id="btnrules" data-dismiss="modal">SAVE
+                    CHANGES</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
 
+        //Image 
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#logo').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        };
+
+        $("#inputFile").change(function () {
+            readURL(this);
+        });
         var rules;
-         var  addfee;
-         var  regfee;
-         var transfee;
-         var bokfee;
-         var finefee;
-       
+        var addfee;
+        var regfee;
+        var transfee;
+        var bokfee;
+        var finefee;
 
-        $("#btnrules").click(function(){
-             rules =$("#rulesregulations").val()
+
+        $("#btnrules").click(function () {
+            rules = $("#rulesregulations").val()
         });
 
-        $("#btnfees").click(function(){
-                 addfee =$("#admissionfee").val()
-                 regfee =$("#regfe").val()
-                 transfee =$("#transportfee").val()
-                 bokfee =$("#bookfee").val()
-                finefee =$("#finefee").val()
+        $("#btnfees").click(function () {
+            addfee = $("#admissionfee").val()
+            regfee = $("#regfe").val()
+            transfee = $("#transportfee").val()
+            bokfee = $("#bookfee").val()
+            finefee = $("#finefee").val()
         });
 
-        $("#btnsubmit").click(function(){
+        $("#btnsubmit").click(function () {
 
+            if (($("#instname").val() == "") && ($("#logo").val() == "") && ($("#address").val() == "")) {
+                showNotification("warning", " Please Fill all neccessary fields!!");
+            }
+            else if (($("#instname").val() == "")) {
+                showNotification("warning", " Please Provide Institute Name!!");
+            }
+            else if (($("#logo").val() == "")) {
+                showNotification("warning", " Please Provide Logo!!");
+            }
+            else if (($("#address").val() == "")) {
+                showNotification("warning", " Please Provide Address!!");
+            }
 
-        if( ($("#instname").val()=="")){
-            $(".error22").text("enter som text")
-             showNotification("warning"," Please Provide Institute Name!!");
-        }
-        else  if( ($("#logo").val()=="") ){
-             showNotification("warning"," Please Provide Logo!!");
-        }
-         else  if( ($("#address").val()=="") ){
-             showNotification("warning"," Please Provide Address!!");
-        }
-    
-         @* else  if( ($("#country").val()==null) ){
-             showNotification("warning "," Please Provide Country!!");
-        } *@
+            @* else  if( ($("#country").val()==null) ){
+                    showNotification("warning "," Please Provide Country!!");
+                    } *@
 
-         else{
-             var  InstituteModel={
-                Name: $("#instname").val(),
-                Phone: $("#phone").val(),
-                Website: $("#website").val(),
-                Address: $("#address").val(),
-                Country: $("#country").val(),
-                Logo: $("#logo").val(), 
-                Moto: $("#tagline").val(),
-                RulesRegulations:rules,
-                AdmissionFee:addfee,
-                RegistrationFee:regfee,
-                TransportFee:transfee,
-                BooksFee:bokfee,
-                FineFee:finefee,
-            };
-            
-            $.ajax({
-                type:'Post',
-                url:'/Institute/PostInstitue',
-                data:InstituteModel,
-                success:function(resp){
-                    if(resp==true){
-                         showNotification("success","Institute Registered!");
-                         @* location.reload(); *@
+         else {
+                var InstituteModel = {
+                    Name: $("#instname").val(),
+                    Phone: $("#phone").val(),
+                    Website: $("#website").val(),
+                    Address: $("#address").val(),
+                    Country: $("#country").val(),
+                    Logo: $("#logo").val(),
+                    Moto: $("#tagline").val(),
+                    RulesRegulations: rules,
+                    AdmissionFee: addfee,
+                    RegistrationFee: regfee,
+                    TransportFee: transfee,
+                    BooksFee: bokfee,
+                    FineFee: finefee,
+                };
+
+                $.ajax({
+                    type: 'Post',
+                    url: '/Institute/PostInstitue',
+                    data: InstituteModel,
+                    success: function (resp) {
+                        if (resp == true) {
+                            showNotification("success", "Institute Registered!");
+                            @* location.reload(); *@
                     }
-                    else{
-                        showNotification("danger","Registration Failed!");
-                    }
-                },
-            });
-         }
-          
+                        else {
+                            showNotification("danger", "Registration Failed!");
+                        }
+                    },
+                });
+            }
+
         });
 
-         
-         
-      
-        
+
+
+
+
 
 
 
 
     });
 </script>
-
-
-
-
