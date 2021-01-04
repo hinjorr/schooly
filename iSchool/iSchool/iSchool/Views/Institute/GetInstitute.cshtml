@@ -4,6 +4,7 @@
     
 }
    
+    <link href="~/PageScript/error22.css" rel="stylesheet" />
 
               <form id="class12">                
              <div class="row clearfix">
@@ -23,6 +24,7 @@
                                             <label>Institute Name</label>
                                             <input type="text" id="instname" class="form-control" >
                                         </div>
+                                         <label class="error22"></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -31,6 +33,7 @@
                                             <label>Phone</label>
                                             <input type="text" id="phone" class="form-control">
                                         </div>
+                                        <label class="error22"></label>
                                     </div>
                                 </div>
                                  <div class="col-md-4">
@@ -39,6 +42,7 @@
                                             <label>Website</label>
                                             <input type="text" id="website" class="form-control" >
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -51,6 +55,7 @@
                                             <label>Address</label>
                                             <input type="text" id="address" class="form-control" >
                                         </div>
+                                        <label class="error22"></label>
                                     </div>
                                 </div>
                               
@@ -70,6 +75,7 @@
                                             <label>Logo</label>
                                             <input type="file" id="logo" name="img" accept="image/*" class="form-control">
                                     </div>
+                                    <label class="error22"></label>
                                 </div>
                             </div>
 
@@ -205,7 +211,8 @@
         $("#btnsubmit").click(function(){
 
 
-        if( ($("#instname").val()=="") ){
+        if( ($("#instname").val()=="")){
+            $(".error22").text("enter som text")
              showNotification("warning"," Please Provide Institute Name!!");
         }
         else  if( ($("#logo").val()=="") ){
