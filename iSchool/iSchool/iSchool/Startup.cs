@@ -33,6 +33,7 @@ namespace iSchool
             services.AddScoped<IRegister, RegisterModel>();
             services.AddScoped<ILogin, LoginCredentialsModel>();
             services.AddScoped<IInstitue, InstituteCredentials>();
+            services.AddScoped<IGeneral, GeneralModel>();
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddLiveReload();
            
@@ -54,7 +55,6 @@ namespace iSchool
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
 
             app.UseAuthorization();

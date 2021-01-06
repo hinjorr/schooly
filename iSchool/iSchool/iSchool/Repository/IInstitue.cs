@@ -9,5 +9,6 @@ namespace iSchool.Repository
    public interface IInstitue
     {
         public  Task<bool> addinstitute(InstituteModel model);
+       
     }
 }

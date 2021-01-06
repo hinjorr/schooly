@@ -4,7 +4,6 @@
 
 }
 
-
 <form>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -58,13 +57,8 @@
 
                                     <div class="col-sm-6">
                                         <label>Country</label>
-                                        <select class="form-control show-tick">
-                                            <option value="">-- Please select --</option>
-                                            <option value="10">10</option>
-                                            <option value="20">20</option>
-                                            <option value="30">30</option>
-                                            <option value="40">40</option>
-                                            <option value="50">50</option>
+                                        <select class="form-control show-tick" id="countryDropDown">
+
                                         </select>
                                     </div>
 
@@ -104,8 +98,9 @@
                                 </div>
                             </div>
                             <div class="row">
-                               
-                                <button type="button" id="btnsubmit" class="btn btn-primary waves-effect">Submit</button>
+
+                                <button type="button" id="btnsubmit"
+                                    class="btn btn-primary waves-effect">Submit</button>
                                 <button type="reset" id="btnreset" class="btn btn-warning waves-effect">Reset</button>
 
                             </div>
@@ -231,25 +226,25 @@
             else if (($("#instname").val() == "")) {
                 showNotification("warning", " Please Provide Institute Name!!");
             }
-            else if (($("#logo").val() == "")) {
+            else if (($("#inputFile").val() == "")) {
                 showNotification("warning", " Please Provide Logo!!");
             }
             else if (($("#address").val() == "")) {
                 showNotification("warning", " Please Provide Address!!");
             }
 
-            @* else  if( ($("#country").val()==null) ){
-                    showNotification("warning "," Please Provide Country!!");
-                    } *@
+            // else  if( ($("#country").val()==null) ){
+            //      showNotification("warning "," Please Provide Country!!");
+            //    } 
 
-         else {
+            else {
                 var InstituteModel = {
                     Name: $("#instname").val(),
                     Phone: $("#phone").val(),
                     Website: $("#website").val(),
                     Address: $("#address").val(),
-                    Country: $("#country").val(),
-                    Logo: $("#logo").val(),
+                    Country: $("#countryDropDown option:selected").val(),
+                    Logo: $("#inputFile").val(),
                     Moto: $("#tagline").val(),
                     RulesRegulations: rules,
                     AdmissionFee: addfee,
@@ -259,6 +254,7 @@
                     FineFee: finefee,
                 };
 
+
                 $.ajax({
                     type: 'Post',
                     url: '/Institute/PostInstitue',
@@ -267,7 +263,8 @@
                         if (resp == true) {
                             showNotification("success", "Institute Registered!");
                             $("#btnreset").click();
-                    }
+                            console.log(InstituteModel.Country);
+                        }
                         else {
                             showNotification("danger", "Registration Failed!");
                         }
@@ -278,6 +275,23 @@
         });
 
 
+
+        //Countries List
+
+        $.ajax({
+            async: false,
+            url: '/General/ListCountries',
+            success: function (resp) {
+                //console.log(resp);
+                var html = "";
+                html += "<option value='0'>Please Slect Country</option>";
+                $(resp).each(function (index, item) {
+
+                    html += "<option value=" + item.id + ">" + item.text + "</option>";
+                });
+                $("#countryDropDown").append(html);
+            },
+        });
 
 
 

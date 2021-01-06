@@ -11,9 +11,11 @@ namespace iSchool.Controllers
     public class InstituteController : Controller
     {
         public readonly IInstitue _repo;
+        
         public InstituteController(IInstitue repo)
         {
             _repo = repo;
+           
         }
         public IActionResult GetInstitute()
         {
@@ -32,6 +34,8 @@ namespace iSchool.Controllers
             }
 
         }
+
+        
 
     }
 }
