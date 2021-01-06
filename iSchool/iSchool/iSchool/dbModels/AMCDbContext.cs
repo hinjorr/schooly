@@ -16,6 +16,7 @@ namespace iSchool.dbModels
         }
 
         public virtual DbSet<TblCountries> TblCountries { get; set; }
+        public virtual DbSet<TblStudents> TblStudents { get; set; }
         public virtual DbSet<Tblregistration> Tblregistration { get; set; }
         public virtual DbSet<Tblschoolconfig> Tblschoolconfig { get; set; }
 
@@ -53,6 +54,133 @@ namespace iSchool.dbModels
                     .HasDefaultValueSql("''")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
+            });
+
+            modelBuilder.Entity<TblStudents>(entity =>
+            {
+                entity.ToTable("tbl_students");
+
+                entity.Property(e => e.Id).HasColumnType("int(11)");
+
+                entity.Property(e => e.Address)
+                    .IsRequired()
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.AdmissionDate)
+                    .HasColumnName("admission_date")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.Class)
+                    .HasColumnName("class")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Country)
+                    .IsRequired()
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.Dob)
+                    .IsRequired()
+                    .HasColumnName("DOB")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.FatherCnic)
+                    .HasColumnName("father_cnic")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.FatherIncome)
+                    .HasColumnName("father_Income")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.FatherName)
+                    .IsRequired()
+                    .HasColumnName("father_name")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.FatherNumber)
+                    .HasColumnName("father_number")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.FatherOccupation)
+                    .HasColumnName("father_occupation")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.Gender)
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.MotherCnic)
+                    .HasColumnName("mother_cnic")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.MotherIncome)
+                    .HasColumnName("mother_income")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.MotherName)
+                    .HasColumnName("mother_name")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.MotherOccupation)
+                    .HasColumnName("mother_occupation")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.MotherPhone)
+                    .HasColumnName("mother_phone")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.Religion).HasColumnType("int(11)");
+
+                entity.Property(e => e.StdBform)
+                    .HasColumnName("Std_Bform")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.StdName)
+                    .IsRequired()
+                    .HasColumnName("std_name")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.StdNumber)
+                    .HasColumnName("std_number")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.StdPic)
+                    .HasColumnName("std_pic")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
             });
 
             modelBuilder.Entity<Tblregistration>(entity =>

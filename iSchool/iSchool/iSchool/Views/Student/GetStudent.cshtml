@@ -1,0 +1,260 @@
+@{
+    ViewData["Title"] = "GetStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form>
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Add Student Info Here
+                    </h2>
+
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Student Name</label>
+                                    <input type="text" id="stdname" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Student Phone</label>
+                                    <input type="text" id="stdphone" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Class</label>
+                            <select class="form-control show-tick" id="classesdropdown">
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label>Address</label>
+                                                <input type="text" id="stdaddress" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <label>Country</label>
+                                        <select class="form-control show-tick" id="countryDropDown">
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-5">
+                                        <label>Gender</label>
+                                        <div class="demo-radio-button">
+                                            <input name="group1" type="radio" id="male" checked />
+                                            <label for="male">Male</label>
+                                            <input name="group1" type="radio" id="female" />
+                                            <label for="female">Female</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <br>
+                                            <button type="button" class="btn btn-info waves-effect" data-toggle="modal"
+                                                data-target="#otherinfo">OTHER INFO</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <br>
+                                            <button type="button" class="btn btn-info waves-effect" data-toggle="modal"
+                                                data-target="#fatherinfo">FATHER INFO</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <br>
+                                            <button type="button" class="btn btn-info waves-effect" data-toggle="modal"
+                                                data-target="#motherinfo">MOTHER INFO</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Picture</label>
+                                    <input type='file' id="std_pic" />
+                                    <img style="width:200px;height:200px" id="logo" src="http://placehold.it/200x200"
+                                        alt="your image" />
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <button type="button" id="btnsubmit"
+                                    class="btn btn-primary waves-effect">Submit</button>
+                                <button type="reset" id="btnreset" class="btn btn-warning waves-effect">Reset</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- #END# Multi Column -->
+
+
+<!-- #Others Info -->
+<div class="modal fade" id="otherinfo" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="smallModalLabel">Other Info (optional)</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Date of Birth</label>
+                        <input type="text" id="dob" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Student B Form</label>
+                        <input type="text" id="std_bform" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Religion</label>
+                        <select class="form-control show-tick" id="religionDropDown">
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" id="btnother" data-dismiss="modal">SAVE
+                    CHANGES</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- #Father's info -->
+<div class="modal fade" id="fatherinfo" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="smallModalLabel">Father's Info (optional)</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Father Name</label>
+                        <input type="text" id="fth_name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Father CNIC</label>
+                        <input type="text" id="fth_cnic" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Father Phone</label>
+                        <input type="text" id="fth_phone" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Father Occupation</label>
+                        <input type="text" id="fth_ocupation" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Father Income</label>
+                        <input type="text" id="fth_income" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" id="btnfather" data-dismiss="modal">SAVE
+                    CHANGES</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- #Mother's info -->
+<div class="modal fade" id="motherinfo" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="smallModalLabel">Mother's Info (optional)</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Mother Name</label>
+                        <input type="text" id="mth_name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Mother CNIC</label>
+                        <input type="text" id="mth_cnic" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Mother Phone</label>
+                        <input type="text" id="mth_phone" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Mother Occupation</label>
+                        <input type="text" id="mth_occupation" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <label>Mother Income</label>
+                        <input type="text" id="mth_income" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" id="btnmother" data-dismiss="modal">SAVE
+                    CHANGES</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
