@@ -16,6 +16,7 @@ namespace iSchool.dbModels
         }
 
         public virtual DbSet<TblCountries> TblCountries { get; set; }
+        public virtual DbSet<TblReligion> TblReligion { get; set; }
         public virtual DbSet<TblStudents> TblStudents { get; set; }
         public virtual DbSet<Tblregistration> Tblregistration { get; set; }
         public virtual DbSet<Tblschoolconfig> Tblschoolconfig { get; set; }
@@ -56,6 +57,25 @@ namespace iSchool.dbModels
                     .HasCollation("utf8_general_ci");
             });
 
+            modelBuilder.Entity<TblReligion>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("tbl_religion");
+
+                entity.HasIndex(e => e.Id)
+                    .HasName("Id");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Religion)
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+            });
+
             modelBuilder.Entity<TblStudents>(entity =>
             {
                 entity.ToTable("tbl_students");
@@ -83,7 +103,6 @@ namespace iSchool.dbModels
                     .HasCollation("latin1_swedish_ci");
 
                 entity.Property(e => e.Dob)
-                    .IsRequired()
                     .HasColumnName("DOB")
                     .HasColumnType("varchar(50)")
                     .HasCharSet("latin1")
@@ -102,7 +121,6 @@ namespace iSchool.dbModels
                     .HasCollation("latin1_swedish_ci");
 
                 entity.Property(e => e.FatherName)
-                    .IsRequired()
                     .HasColumnName("father_name")
                     .HasColumnType("varchar(50)")
                     .HasCharSet("latin1")

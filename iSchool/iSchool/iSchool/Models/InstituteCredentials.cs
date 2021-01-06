@@ -36,8 +36,6 @@ namespace iSchool.Models
                 _db.Tblschoolconfig.Add(tbl);
                 await _db.SaveChangesAsync();
                 return true;
-
-
             }
             catch (Exception ex)
             {

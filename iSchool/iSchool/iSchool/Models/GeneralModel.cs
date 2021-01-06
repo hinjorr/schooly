@@ -1,4 +1,5 @@
 ﻿using iSchool.dbModels;
+using iSchool.DTO;
 using iSchool.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -22,6 +23,16 @@ namespace iSchool.Models
                 Id = x.Id,
                 text= x.CountryName,
                 CountryCode= x.CountryCode
+            }).ToListAsync();
+            return data;
+        }
+
+        public async Task<List<ReligionDropDown>> ListReligions()
+        {
+            List<ReligionDropDown> data=await _db.TblReligion.Select(x => new ReligionDropDown
+            {
+                Id=x.Id,
+                Religion=x.Religion
             }).ToListAsync();
             return data;
         }

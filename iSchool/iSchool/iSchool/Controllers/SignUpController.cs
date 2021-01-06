@@ -11,7 +11,7 @@
     {
         public readonly IRegister _repo;
         public SignUpController(IRegister repo)
-        {
+        {   
             _repo = repo;
         }
         

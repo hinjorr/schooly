@@ -99,7 +99,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Picture</label>
-                                    <input type='file' id="std_pic" />
+                                    <input type='file' id="inputFile" />
                                     <img style="width:200px;height:200px" id="logo" src="http://placehold.it/200x200"
                                         alt="your image" />
                                 </div>
@@ -267,7 +267,6 @@
             async: false,
             url: '/General/ListCountries',
             success: function (resp) {
-                //console.log(resp);
                 var html = "";
                 html += "<option value='0'>Please Slect Country</option>";
                 $(resp).each(function (index, item) {
@@ -278,7 +277,34 @@
             },
         });
 
+        //Religions List
+        $.ajax({
+            async: false,
+            url: '/General/ListReligions',
+            success: function (resp) {
+                var html = "";
+                html += "<option value='0'>Please Select Religion</option>";
+                $(resp).each(function (index, item) {
 
+                    html += "<option value=" + item.id + ">" + item.religion + "</option>";
+                });
+                $("#religionDropDown").append(html);
+            },
+        });
+
+        //Image Preview
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#logo').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        };
+        $("#inputFile").change(function () {
+            readURL(this);
+        });
 
 
 
