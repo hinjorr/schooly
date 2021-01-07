@@ -1,4 +1,5 @@
 using iSchool.dbModels;
+using iSchool.DTO;
 using iSchool.Models;
 using iSchool.Repository;
 using Microsoft.AspNetCore.Builder;
@@ -34,9 +35,10 @@ namespace iSchool
             services.AddScoped<ILogin, LoginCredentialsModel>();
             services.AddScoped<IInstitue, InstituteCredentials>();
             services.AddScoped<IGeneral, GeneralModel>();
+            services.AddScoped<IStudent, StudentCredentials>();
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddLiveReload();
-           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

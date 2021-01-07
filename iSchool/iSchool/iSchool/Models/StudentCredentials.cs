@@ -26,7 +26,7 @@ namespace iSchool.Models
              tbl.Class=model.Class;
              tbl.Address=model.Address;
              tbl.Country=model.Country;
-             tbl.AdmissionDate=model.AdmissionDate;
+             tbl.AdmissionDate=DateTime.Now;
              tbl.StdPic=model.StdPic;
              tbl.StdNumber=model.StdNumber;
              tbl.Dob=model.Dob;

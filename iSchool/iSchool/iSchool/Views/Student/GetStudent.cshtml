@@ -65,9 +65,9 @@
                                     <div class="col-md-5">
                                         <label>Gender</label>
                                         <div class="demo-radio-button">
-                                            <input name="group1" type="radio" id="male" checked />
+                                            <input name="group1" type="radio" id="male" value="male" checked />
                                             <label for="male">Male</label>
-                                            <input name="group1" type="radio" id="female" />
+                                            <input name="group1" type="radio" id="female" value="female"/>
                                             <label for="female">Female</label>
 
                                         </div>
@@ -132,7 +132,7 @@
                 <div class="form-group">
                     <div class="form-line">
                         <label>Date of Birth</label>
-                        <input type="text" class="datepicker form-control" placeholder="Please choose a date...">
+                        <input type="text" class="datepicker form-control" placeholder="Please choose a date..." id="dofb">
                     </div>
                 </div>
                 <div class="form-group">
@@ -306,7 +306,118 @@
             readURL(this);
         });
 
+        
+        var dobb=0;
+        let studentbform;
+        let religionn;
+        let fathername;
+        let fathercnic;
+        let fatherphone;
+        let fatheroccu;
+        let fatherincome;
+        let mothername;
+        let mothercnic;
+        let motherphone;
+        let motheroccu;
+        let motherincome;
 
+        $("#btnother").click(function(){
+            dobb=$('#dofb').val(),
+            studentbform= $('#std_bform').val();
+            religionn=$('#religionDropDown').val();     
+        });
+
+        $("#btnfather").click(function(){
+            fathername=$('#fth_name').val();
+            fathercnic=$('#fth_cnic').val();
+            fatherphone= $('#fth_phone').val();
+            fatheroccu=$('#fth_ocupation').val();
+            fatherincome= $('#fth_income').val();
+        });
+
+        $("#btnmother").click(function(){
+            mothername=$('#mth_name').val();
+            mothercnic= $('#mth_cnic').val();
+            motherphone= $('#mth_phone').val();
+            motheroccu= $('#mth_occupation').val();
+            motherincome=$('#mth_income').val();
+        });
+
+
+        $('#btnsubmit').click(function () {
+            let StudentModel = {
+                StdName: $('#stdname').val(),
+                Class: $('#classesdropdown').val(),
+                StdPic: $('#inputFile').val(),
+                StdNumber: $('#stdphone').val(),
+                Dob: dobb,
+                Country: $('#countryDropDown').val(),
+                Gender: $("input[name='group1']:checked").val(),
+                Address: $('#stdaddress').val(),
+                StdBform:studentbform,
+                Religion: religionn,
+                FatherName: fathername,
+                FatherCnic:fathercnic ,
+                FatherNumber:fatherphone,
+                FatherOccupation: fatheroccu,
+                FatherIncome:fatherincome,
+                MotherName: mothername,
+                MotherCnic:mothercnic,
+                MotherOccupation:motheroccu,
+                MotherIncome:motherincome ,
+                MotherPhone:motherphone
+            }
+            if(StudentModel.StdName ==""  && StudentModel.Address =="" && StudentModel.Country ==0 )
+            {
+                showNotification("danger","Please fill Fields!!");
+            }
+           else if(StudentModel.StdName =="" )
+            {
+                showNotification("warning","Please provide student!!");
+            }
+            else if(StudentModel.Class ==0 )
+            {
+                showNotification("warning","Please provide Class!!");
+            }
+             else if(StudentModel.Address =="" )
+            {
+                showNotification("warning","Please provide Address!!");
+            }
+             else if(StudentModel.Country ==0 )
+            {
+                showNotification("warning","Please provide Country!!");
+            }
+            else{
+                 $.ajax({
+                    url:'/Student/PostStudent',
+                    data:StudentModel,
+                    success:function(resp){
+                    if(resp == true){
+                    showNotification("success","Registration Scuccessful!");
+                    }
+                    else{
+                    showNotification("danger","Registration Field!!");
+                    }
+                    }
+                    }); 
+            }
+
+           
+
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        });
 
 
 
