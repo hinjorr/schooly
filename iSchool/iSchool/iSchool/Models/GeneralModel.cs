@@ -20,9 +20,9 @@ namespace iSchool.Models
         { // Ilist , List , Ienumerable
             List<ModelDropDown> data = await _db.TblCountries.Select(x => new ModelDropDown
             {
-                Id = x.Id,
-                text= x.CountryName,
-                CountryCode= x.CountryCode
+                CountryId = x.CountryId,
+                CountryName= x.CountryName,
+                
             }).ToListAsync();
             return data;
         }
@@ -31,7 +31,7 @@ namespace iSchool.Models
         {
             List<ReligionDropDown> data=await _db.TblReligion.Select(x => new ReligionDropDown
             {
-                Id=x.Id,
+                ReligionId=x.ReligionId,
                 Religion=x.Religion
             }).ToListAsync();
             return data;

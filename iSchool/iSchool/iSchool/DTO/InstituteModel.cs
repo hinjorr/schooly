@@ -11,7 +11,7 @@ namespace iSchool.DTO
         public string Logo { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
-        public int Country { get; set; }
+        public int? CountryId { get; set; }
         public string Phone { get; set; }
         public string Moto { get; set; }
         public string Website { get; set; }

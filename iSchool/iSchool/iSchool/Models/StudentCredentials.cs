@@ -25,14 +25,14 @@ namespace iSchool.Models
              tbl.StdName=model.StdName;
              tbl.Class=model.Class;
              tbl.Address=model.Address;
-             tbl.Country=model.Country;
+             tbl.CountryId=model.CountryId;
              tbl.AdmissionDate=DateTime.Now;
              tbl.StdPic=model.StdPic;
              tbl.StdNumber=model.StdNumber;
              tbl.Dob=model.Dob;
              tbl.Gender=model.Gender;
              tbl.StdBform=model.StdBform;
-             tbl.Religion=model.Religion;
+             tbl.ReligionId=model.ReligionId;
              tbl.FatherName=model.FatherName;
              tbl.FatherCnic=model.FatherCnic;
              tbl.FatherNumber=model.FatherNumber;

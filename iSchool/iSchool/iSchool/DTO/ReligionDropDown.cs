@@ -7,7 +7,7 @@ namespace iSchool.DTO
 {
     public class ReligionDropDown
     {
-         public int Id { get; set; }
+       public int ReligionId { get; set; }
         public string Religion { get; set; }
     }
 }

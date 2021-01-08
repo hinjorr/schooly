@@ -23,7 +23,7 @@ namespace iSchool.Models
                 tbl.Logo = model.Logo;
                 tbl.Name = model.Name;
                 tbl.Address = model.Address;
-                tbl.Country = model.Country;
+                tbl.CountryId = model.CountryId;
                 tbl.Phone = model.Phone;
                 tbl.Moto = model.Moto;
                 tbl.Website = model.Website;
@@ -32,7 +32,6 @@ namespace iSchool.Models
                 tbl.TransportFee=model.TransportFee;
                 tbl.BooksFee=model.BooksFee;
                 tbl.FineFee=model.FineFee; 
-                tbl.RulesRegulations = model.RulesRegulations;
                 _db.Tblschoolconfig.Add(tbl);
                 await _db.SaveChangesAsync();
                 return true;

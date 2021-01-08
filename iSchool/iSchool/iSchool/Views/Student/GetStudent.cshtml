@@ -271,7 +271,7 @@
                 html += "<option value='0'>Please Slect Country</option>";
                 $(resp).each(function (index, item) {
 
-                    html += "<option value=" + item.id + ">" + item.text + "</option>";
+                    html += "<option value=" + item.countryId + ">" + item.countryName + "</option>";
                 });
                 $("#countryDropDown").append(html);
             },
@@ -286,7 +286,7 @@
                 html += "<option value='0'>Please Select Religion</option>";
                 $(resp).each(function (index, item) {
 
-                    html += "<option value=" + item.id + ">" + item.religion + "</option>";
+                    html += "<option value=" + item.religionId + ">" + item.religion + "</option>";
                 });
                 $("#religionDropDown").append(html);
             },
@@ -351,11 +351,11 @@
                 StdPic: $('#inputFile').val(),
                 StdNumber: $('#stdphone').val(),
                 Dob: dobb,
-                Country: $('#countryDropDown').val(),
+                CountryId: $('#countryDropDown').val(),
                 Gender: $("input[name='group1']:checked").val(),
                 Address: $('#stdaddress').val(),
                 StdBform:studentbform,
-                Religion: religionn,
+                ReligionId: religionn,
                 FatherName: fathername,
                 FatherCnic:fathercnic ,
                 FatherNumber:fatherphone,

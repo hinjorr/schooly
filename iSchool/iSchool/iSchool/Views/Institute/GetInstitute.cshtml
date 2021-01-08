@@ -245,7 +245,7 @@
                     Phone: $("#phone").val(),
                     Website: $("#website").val(),
                     Address: $("#address").val(),
-                    Country: $("#countryDropDown option:selected").val(),
+                    CountryId: $("#countryDropDown option:selected").val(),
                     Logo: $("#inputFile").val(),
                     Moto: $("#tagline").val(),
                     RulesRegulations: rules,
@@ -288,7 +288,7 @@
                 html += "<option value='0'>Please Slect Country</option>";
                 $(resp).each(function (index, item) {
 
-                    html += "<option value=" + item.id + ">" + item.text + "</option>";
+                    html += "<option value=" + item.countryId + ">" + item.countryName + "</option>";
                 });
                 $("#countryDropDown").append(html);
             },

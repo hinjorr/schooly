@@ -9,14 +9,14 @@ namespace iSchool.dbModels
         public string StdName { get; set; }
         public int Class { get; set; }
         public string Address { get; set; }
-        public string Country { get; set; }
-        public DateTime AdmissionDate { get; set; }
+        public int? CountryId { get; set; }
+        public int? ReligionId { get; set; }
+        public DateTime? AdmissionDate { get; set; }
         public string StdPic { get; set; }
         public string StdNumber { get; set; }
         public string Dob { get; set; }
         public string Gender { get; set; }
         public string StdBform { get; set; }
-        public int? Religion { get; set; }
         public string FatherName { get; set; }
         public string FatherCnic { get; set; }
         public string FatherNumber { get; set; }
@@ -27,5 +27,8 @@ namespace iSchool.dbModels
         public string MotherOccupation { get; set; }
         public string MotherIncome { get; set; }
         public string MotherPhone { get; set; }
+
+        public virtual TblCountries Country { get; set; }
+        public virtual TblReligion Religion { get; set; }
     }
 }
