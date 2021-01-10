@@ -38,6 +38,7 @@ namespace iSchool.Models
             }
             catch (Exception ex)
             {
+                
                 return false;
                 throw;
             }

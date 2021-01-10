@@ -404,3 +404,4 @@ D:\repo\schooly\iSchool\iSchool\iSchool\bin\Debug\netcoreapp3.1\zh-Hans\Microsof
 D:\repo\schooly\iSchool\iSchool\iSchool\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\Razor\Views\Institute\GetInstitute.cshtml.g.cs
 D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\Razor\Views\Student\GetStudent.cshtml.g.cs
+D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\Razor\Views\Class\GetClass.cshtml.g.cs

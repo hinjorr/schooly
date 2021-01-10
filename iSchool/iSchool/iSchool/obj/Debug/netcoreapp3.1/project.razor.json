@@ -14397,6 +14397,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\Class\\GetClass.cshtml",
+      "TargetPath": "Views\\Class\\GetClass.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\SignUp\\Signup.cshtml",
       "TargetPath": "Views\\SignUp\\Signup.cshtml",
       "FileKind": "mvc"

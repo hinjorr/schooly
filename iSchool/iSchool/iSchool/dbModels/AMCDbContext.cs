@@ -15,9 +15,12 @@ namespace iSchool.dbModels
         {
         }
 
+        public virtual DbSet<TblAssignclass> TblAssignclass { get; set; }
+        public virtual DbSet<TblClass> TblClass { get; set; }
         public virtual DbSet<TblCountries> TblCountries { get; set; }
         public virtual DbSet<TblReligion> TblReligion { get; set; }
         public virtual DbSet<TblStudents> TblStudents { get; set; }
+        public virtual DbSet<TblSubject> TblSubject { get; set; }
         public virtual DbSet<Tblregistration> Tblregistration { get; set; }
         public virtual DbSet<Tblschoolconfig> Tblschoolconfig { get; set; }
 
@@ -32,6 +35,71 @@ namespace iSchool.dbModels
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<TblAssignclass>(entity =>
+            {
+                entity.HasKey(e => e.AssignclassId)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("tbl_assignclass");
+
+                entity.HasIndex(e => e.CId)
+                    .HasName("C_Id");
+
+                entity.HasIndex(e => e.SubjectId)
+                    .HasName("Subject_id");
+
+                entity.Property(e => e.AssignclassId)
+                    .HasColumnName("assignclass_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.CId)
+                    .HasColumnName("C_Id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.MarksWeightage)
+                    .HasColumnName("Marks_Weightage")
+                    .HasColumnType("int(25)");
+
+                entity.Property(e => e.SubjectId)
+                    .HasColumnName("Subject_id")
+                    .HasColumnType("int(11)");
+
+                entity.HasOne(d => d.C)
+                    .WithMany(p => p.TblAssignclass)
+                    .HasForeignKey(d => d.CId)
+                    .OnDelete(DeleteBehavior.SetNull)
+                    .HasConstraintName("tbl_assignclass_ibfk_2");
+
+                entity.HasOne(d => d.Subject)
+                    .WithMany(p => p.TblAssignclass)
+                    .HasForeignKey(d => d.SubjectId)
+                    .OnDelete(DeleteBehavior.SetNull)
+                    .HasConstraintName("tbl_assignclass_ibfk_1");
+            });
+
+            modelBuilder.Entity<TblClass>(entity =>
+            {
+                entity.HasKey(e => e.CId)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("tbl_class");
+
+                entity.Property(e => e.CId)
+                    .HasColumnName("C_Id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.CFees)
+                    .HasColumnName("C_fees")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.CName)
+                    .IsRequired()
+                    .HasColumnName("C_name")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+            });
+
             modelBuilder.Entity<TblCountries>(entity =>
             {
                 entity.HasKey(e => e.CountryId)
@@ -75,6 +143,9 @@ namespace iSchool.dbModels
             {
                 entity.ToTable("tbl_students");
 
+                entity.HasIndex(e => e.Class)
+                    .HasName("tbl_students_ibfk_3");
+
                 entity.HasIndex(e => e.CountryId)
                     .HasName("CountryID");
 
@@ -93,9 +164,7 @@ namespace iSchool.dbModels
                     .HasColumnName("admission_date")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Class)
-                    .HasColumnName("class")
-                    .HasColumnType("int(11)");
+                entity.Property(e => e.Class).HasColumnType("int(11)");
 
                 entity.Property(e => e.CountryId)
                     .HasColumnName("CountryID")
@@ -201,6 +270,12 @@ namespace iSchool.dbModels
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
+                entity.HasOne(d => d.ClassNavigation)
+                    .WithMany(p => p.TblStudents)
+                    .HasForeignKey(d => d.Class)
+                    .OnDelete(DeleteBehavior.SetNull)
+                    .HasConstraintName("tbl_students_ibfk_3");
+
                 entity.HasOne(d => d.Country)
                     .WithMany(p => p.TblStudents)
                     .HasForeignKey(d => d.CountryId)
@@ -212,6 +287,26 @@ namespace iSchool.dbModels
                     .HasForeignKey(d => d.ReligionId)
                     .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("tbl_students_ibfk_1");
+            });
+
+            modelBuilder.Entity<TblSubject>(entity =>
+            {
+                entity.HasKey(e => e.SubjectId)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("tbl_subject");
+
+                entity.Property(e => e.SubjectId)
+                    .HasColumnName("Subject_id")
+                    .HasColumnType("int(11)")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.SubjectName)
+                    .IsRequired()
+                    .HasColumnName("Subject_name")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
             });
 
             modelBuilder.Entity<Tblregistration>(entity =>

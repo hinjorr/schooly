@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "GetClass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="row clearfix" style="align:center;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    Add New Class
+                </h2>
+
+            </div>
+            <div class="body">
+                <div class="row ">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label for="classname">Class Name</label>
+                                <input type="text" id="classname" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row ">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label for="fees">Class fees</label>
+                                <input type="text" id="fees" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" id="btnsubmit" class="btn btn-primary waves-effect">Submit</button>
+                    <button type="reset" id="btnreset" class="btn btn-warning waves-effect">Reset</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #END# Multi Column -->
+<script>
+    $(document).ready(function () {
+        $('#btnsubmit').click(function(){
+             
+            let ClassDTO={
+                CName:$('#classname').val();
+                CFees:$('#fees').val();
+            }
+            console.log(ClassDTO)
+            $.ajax({
+                type:'Post',
+                url:'Class/PostClass'
+                data:ClassDTO,
+                success: function (resp) {
+                        if (resp == true) {
+                            showNotification("success", "Class Registered!");
+                            $("#btnreset").click();
+                        }
+                        else {
+                            showNotification("danger", "Class Failed!");
+                        }
+                    },
+            })
+        })
+
+
+
+
+    })
+</script>

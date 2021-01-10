@@ -7,7 +7,7 @@ namespace iSchool.dbModels
     {
         public int Id { get; set; }
         public string StdName { get; set; }
-        public int Class { get; set; }
+        public int? Class { get; set; }
         public string Address { get; set; }
         public int? CountryId { get; set; }
         public int? ReligionId { get; set; }
@@ -28,6 +28,7 @@ namespace iSchool.dbModels
         public string MotherIncome { get; set; }
         public string MotherPhone { get; set; }
 
+        public virtual TblClass ClassNavigation { get; set; }
         public virtual TblCountries Country { get; set; }
         public virtual TblReligion Religion { get; set; }
     }

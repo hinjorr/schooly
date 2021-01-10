@@ -36,6 +36,7 @@ namespace iSchool
             services.AddScoped<IInstitue, InstituteCredentials>();
             services.AddScoped<IGeneral, GeneralModel>();
             services.AddScoped<IStudent, StudentCredentials>();
+            services.AddScoped<IClass, Classmodel>();
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddLiveReload();
 
