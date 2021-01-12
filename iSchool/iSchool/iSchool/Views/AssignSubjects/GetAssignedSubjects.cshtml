@@ -1,0 +1,163 @@
+@{
+    ViewData["Title"] = "GetAssignedSubjects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .hide {
+        display: none;
+    }
+</style>
+<form action="">
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Assign Subjects
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row ">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <label>Select Class</label>
+                            <select class="form-control show-tick" id="classesdropdown">
+                            </select>
+                        </div>
+                    </div>
+                    <div id="kuchBi">
+                        <div class="row ">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4">
+                                <label>Select Subject</label>
+                                <select class="form-control show-tick subjectsdropdown"></select>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <label>Marks Weightage </label>
+                                        <input type="text" class="form-control marks">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <button type="button" id="btnsubmit" class="btn btn-primary waves-effect">Submit</button>
+                        <button type="reset" id="btnreset" class="btn btn-warning waves-effect">Reset</button>
+                        <button type="button" id="btntexbox" class="btn btn-primary waves-effect">New textbox</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- #END# Multi Column -->
+
+
+<div class="row template hide">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <label>Select Subject</label>
+        <select class="form-control show-tick subjectsdropdown"></select>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <div class="form-line">
+                <label>Marks Weightage </label>
+                <input type="text" class="form-control marks">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        //cloning dropdown
+        $("#btntexbox").click(function () {
+            let clone = $(".template").clone();
+            clone.removeClass("template");
+            clone.removeClass("hide");
+            clone.appendTo($("#kuchBi"));
+        })
+
+
+        //class
+        $.ajax({
+            async: false,
+            url: '/General/ListClass',
+            success: function (resp) {
+                let html = '';
+                html += "<option value='0'>Please Select class</option>";
+                $(resp).each(function (index, item) {
+                    html += "<option value=" + item.cId + ">" + item.cName + "</option>";
+                });
+                $("#classesdropdown").append(html);
+            },
+        })
+
+        //subject
+        $.ajax({
+            async: false,
+            url: '/General/ListSubjects',
+            success: function (resp) {
+                let html = '';
+                html += "<option value='0'>Please Select subject</option>";
+                $(resp).each(function (index, item) {
+                    html += "<option value=" + item.subjectId + ">" + item.subjectName + "</option>";
+                });
+                $(".subjectsdropdown").append(html);
+            },
+        })
+
+        //submit click 
+        $("#btnsubmit").click(function () {
+            
+            let AssignSbjectsDTO = {
+                SubjectId: $(".subjectsdropdown option:selected").val(),
+                CId: $("#classesdropdown option:selected").val(),
+                MarksWeightage: $(".marks").val(),
+            }
+            
+            $.ajax({
+                url: '/AssignSubjects/PostAssignedSubjects',
+                data: AssignSbjectsDTO,
+                success: function (resp) {
+                    if (resp == true) {
+                        showNotification("success", "Subjects Assigned!");
+
+                        $("#btnreset").click()
+                    }
+                    else {
+                        console.log(resp.erroname);
+                        showNotification("danger", "Assign Failed!");
+                    }
+                },
+            })
+            
+        })
+
+        //makrs entr
+        $(".marks").keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                showNotification("danger", "Input Only Numbers");
+                return false;
+            }
+            
+        })
+
+    })
+</script>

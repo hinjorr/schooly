@@ -405,3 +405,5 @@ D:\repo\schooly\iSchool\iSchool\iSchool\bin\Debug\netcoreapp3.1\zh-Hant\Microsof
 D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\Razor\Views\Institute\GetInstitute.cshtml.g.cs
 D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\Razor\Views\Student\GetStudent.cshtml.g.cs
 D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\Razor\Views\Class\GetClass.cshtml.g.cs
+D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\Razor\Views\Subjects\GetSubject.cshtml.g.cs
+D:\repo\schooly\iSchool\iSchool\iSchool\obj\Debug\netcoreapp3.1\Razor\Views\AssignSubjects\GetAssignedSubjects.cshtml.g.cs

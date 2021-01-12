@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace iSchool.DTO
 {
-    public class ReligionDropDown
+    public class SubjectsDTO
     {
-       public int ReligionId { get; set; }
-        public string Religion { get; set; }
+        public int SubjectId { get; set; }
+        public string SubjectName { get; set; }
     }
 }

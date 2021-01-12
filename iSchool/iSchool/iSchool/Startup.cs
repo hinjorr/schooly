@@ -37,6 +37,8 @@ namespace iSchool
             services.AddScoped<IGeneral, GeneralModel>();
             services.AddScoped<IStudent, StudentCredentials>();
             services.AddScoped<IClass, Classmodel>();
+            services.AddScoped<ISubjects, SubjectsModel>();
+            services.AddScoped<IAssignSubject, AssignSubjectModel>();
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddLiveReload();
 

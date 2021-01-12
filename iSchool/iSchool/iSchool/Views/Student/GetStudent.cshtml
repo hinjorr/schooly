@@ -2,9 +2,6 @@
     ViewData["Title"] = "GetStudent";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-
 <form>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -67,9 +64,8 @@
                                         <div class="demo-radio-button">
                                             <input name="group1" type="radio" id="male" value="male" checked />
                                             <label for="male">Male</label>
-                                            <input name="group1" type="radio" id="female" value="female"/>
+                                            <input name="group1" type="radio" id="female" value="female" />
                                             <label for="female">Female</label>
-
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -117,147 +113,149 @@
             </div>
         </div>
     </div>
+
+    <!-- #END# Multi Column -->
+
+    <!-- #Others Info -->
+    <div class="modal fade" id="otherinfo" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="smallModalLabel">Other Info (optional)</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Date of Birth</label>
+                            <input type="text" class="datepicker form-control" placeholder="Please choose a date..."
+                                id="dofb">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Student B Form</label>
+                            <input type="text" id="std_bform" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Religion</label>
+                            <select class="form-control show-tick" id="religionDropDown">
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" id="btnother" data-dismiss="modal">SAVE
+                        CHANGES</button>
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #Father's info -->
+    <div class="modal fade" id="fatherinfo" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="smallModalLabel">Father's Info (optional)</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Father Name</label>
+                            <input type="text" id="fth_name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Father CNIC</label>
+                            <input type="text" id="fth_cnic" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Father Phone</label>
+                            <input type="text" id="fth_phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Father Occupation</label>
+                            <input type="text" id="fth_ocupation" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Father Income</label>
+                            <input type="text" id="fth_income" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" id="btnfather" data-dismiss="modal">SAVE
+                        CHANGES</button>
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #Mother's info -->
+    <div class="modal fade" id="motherinfo" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="smallModalLabel">Mother's Info (optional)</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Mother Name</label>
+                            <input type="text" id="mth_name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Mother CNIC</label>
+                            <input type="text" id="mth_cnic" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Mother Phone</label>
+                            <input type="text" id="mth_phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Mother Occupation</label>
+                            <input type="text" id="mth_occupation" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label>Mother Income</label>
+                            <input type="text" id="mth_income" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" id="btnmother" data-dismiss="modal">SAVE
+                        CHANGES</button>
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
-<!-- #END# Multi Column -->
-
-<!-- #Others Info -->
-<div class="modal fade" id="otherinfo" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="smallModalLabel">Other Info (optional)</h4>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Date of Birth</label>
-                        <input type="text" class="datepicker form-control" placeholder="Please choose a date..." id="dofb">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Student B Form</label>
-                        <input type="text" id="std_bform" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Religion</label>
-                        <select class="form-control show-tick" id="religionDropDown">
-                        </select>
-                    </div>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-link waves-effect" id="btnother" data-dismiss="modal">SAVE
-                    CHANGES</button>
-                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- #Father's info -->
-<div class="modal fade" id="fatherinfo" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="smallModalLabel">Father's Info (optional)</h4>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Father Name</label>
-                        <input type="text" id="fth_name" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Father CNIC</label>
-                        <input type="text" id="fth_cnic" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Father Phone</label>
-                        <input type="text" id="fth_phone" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Father Occupation</label>
-                        <input type="text" id="fth_ocupation" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Father Income</label>
-                        <input type="text" id="fth_income" class="form-control">
-                    </div>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-link waves-effect" id="btnfather" data-dismiss="modal">SAVE
-                    CHANGES</button>
-                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- #Mother's info -->
-<div class="modal fade" id="motherinfo" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="smallModalLabel">Mother's Info (optional)</h4>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Mother Name</label>
-                        <input type="text" id="mth_name" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Mother CNIC</label>
-                        <input type="text" id="mth_cnic" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Mother Phone</label>
-                        <input type="text" id="mth_phone" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Mother Occupation</label>
-                        <input type="text" id="mth_occupation" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-line">
-                        <label>Mother Income</label>
-                        <input type="text" id="mth_income" class="form-control">
-                    </div>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-link waves-effect" id="btnmother" data-dismiss="modal">SAVE
-                    CHANGES</button>
-                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script>
     $(document).ready(function () {
@@ -274,6 +272,21 @@
                     html += "<option value=" + item.countryId + ">" + item.countryName + "</option>";
                 });
                 $("#countryDropDown").append(html);
+            },
+        });
+
+        //Class List
+        $.ajax({
+            async: false,
+            url: '/General/ListClass',
+            success: function (resp) {
+                var html = "";
+                html += "<option value='0'>Please Select Class</option>";
+                $(resp).each(function (index, item) {
+
+                    html += "<option value=" + item.cId + ">" + item.cName + "</option>";
+                });
+                $("#classesdropdown").append(html);
             },
         });
 
@@ -306,8 +319,8 @@
             readURL(this);
         });
 
-        
-        var dobb=0;
+
+        var dobb = 0;
         let studentbform;
         let religionn;
         let fathername;
@@ -321,29 +334,32 @@
         let motheroccu;
         let motherincome;
 
-        $("#btnother").click(function(){
-            dobb=$('#dofb').val(),
-            studentbform= $('#std_bform').val();
-            religionn=$('#religionDropDown').val();     
+        //other modal
+        $("#btnother").click(function () {
+            dobb = $('#dofb').val(),
+                studentbform = $('#std_bform').val();
+            religionn = $('#religionDropDown').val();
         });
 
-        $("#btnfather").click(function(){
-            fathername=$('#fth_name').val();
-            fathercnic=$('#fth_cnic').val();
-            fatherphone= $('#fth_phone').val();
-            fatheroccu=$('#fth_ocupation').val();
-            fatherincome= $('#fth_income').val();
+        //father modal
+        $("#btnfather").click(function () {
+            fathername = $('#fth_name').val();
+            fathercnic = $('#fth_cnic').val();
+            fatherphone = $('#fth_phone').val();
+            fatheroccu = $('#fth_ocupation').val();
+            fatherincome = $('#fth_income').val();
         });
 
-        $("#btnmother").click(function(){
-            mothername=$('#mth_name').val();
-            mothercnic= $('#mth_cnic').val();
-            motherphone= $('#mth_phone').val();
-            motheroccu= $('#mth_occupation').val();
-            motherincome=$('#mth_income').val();
+        //mother modal
+        $("#btnmother").click(function () {
+            mothername = $('#mth_name').val();
+            mothercnic = $('#mth_cnic').val();
+            motherphone = $('#mth_phone').val();
+            motheroccu = $('#mth_occupation').val();
+            motherincome = $('#mth_income').val();
         });
 
-
+        //full form submission
         $('#btnsubmit').click(function () {
             let StudentModel = {
                 StdName: $('#stdname').val(),
@@ -351,76 +367,59 @@
                 StdPic: $('#inputFile').val(),
                 StdNumber: $('#stdphone').val(),
                 Dob: dobb,
-                CountryId: $('#countryDropDown').val(),
+                CountryId: $('#countryDropDown option:selected').val(),
                 Gender: $("input[name='group1']:checked").val(),
                 Address: $('#stdaddress').val(),
-                StdBform:studentbform,
+                StdBform: studentbform,
                 ReligionId: religionn,
                 FatherName: fathername,
-                FatherCnic:fathercnic ,
-                FatherNumber:fatherphone,
+                FatherCnic: fathercnic,
+                FatherNumber: fatherphone,
                 FatherOccupation: fatheroccu,
-                FatherIncome:fatherincome,
+                FatherIncome: fatherincome,
                 MotherName: mothername,
-                MotherCnic:mothercnic,
-                MotherOccupation:motheroccu,
-                MotherIncome:motherincome ,
-                MotherPhone:motherphone
+                MotherCnic: mothercnic,
+                MotherOccupation: motheroccu,
+                MotherIncome: motherincome,
+                MotherPhone: motherphone
             }
-            if(StudentModel.StdName ==""  && StudentModel.Address =="" && StudentModel.Country ==0 )
-            {
-                showNotification("danger","Please fill Fields!!");
+            if (StudentModel.StdName == "" && StudentModel.Address == "" && StudentModel.Country == 0) {
+                showNotification("danger", "Please fill Fields!!");
             }
-           else if(StudentModel.StdName =="" )
-            {
-                showNotification("warning","Please provide student!!");
+            else if (StudentModel.StdName == "") {
+                showNotification("warning", "Please provide student!!");
             }
-            else if(StudentModel.Class ==0 )
-            {
-                showNotification("warning","Please provide Class!!");
+            else if (StudentModel.Class == 0) {
+                showNotification("warning", "Please provide Class!!");
             }
-             else if(StudentModel.Address =="" )
-            {
-                showNotification("warning","Please provide Address!!");
+            else if (StudentModel.Address == "") {
+                showNotification("warning", "Please provide Address!!");
             }
-             else if(StudentModel.Country ==0 )
-            {
-                showNotification("warning","Please provide Country!!");
+            else if (StudentModel.Country == 0) {
+                showNotification("warning", "Please provide Country!!");
             }
-            else{
-                 $.ajax({
-                    url:'/Student/PostStudent',
-                    data:StudentModel,
-                    success:function(resp){
-                    if(resp == true){
-                    showNotification("success","Registration Scuccessful!");
+            else {
+                $.ajax({
+                    url: '/Student/PostStudent',
+                    data: StudentModel,
+                    success: function (resp) {
+                        if (resp == true) {
+                            showNotification("success", "Registration Scuccessful!");
+                            $("#btnreset").click()
+                        }
+                        else {
+                            showNotification("danger", "Registration Field!!");
+                        }
                     }
-                    else{
-                    showNotification("danger","Registration Field!!");
-                    }
-                    }
-                    }); 
+                });
             }
 
-           
 
 
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
         });
 
-
-  // $("#countryDropDown").val(168).trigger("Change");
+    
+        // $("#countryDropDown").val(168).trigger("Change");
 
     });
 </script>

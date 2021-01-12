@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
-
+<form>
 <div class="row clearfix" style="align:center;">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -11,10 +11,10 @@
                 <h2>
                     Add New Class
                 </h2>
-
             </div>
             <div class="body">
                 <div class="row ">
+                    <div class="col-md-4"></div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <div class="form-line">
@@ -26,6 +26,7 @@
 
                 </div>
                 <div class="row ">
+                    <div class="col-md-4"></div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <div class="form-line">
@@ -45,32 +46,43 @@
         </div>
     </div>
 </div>
+</form>
 <!-- #END# Multi Column -->
 <script>
     $(document).ready(function () {
+
         $('#btnsubmit').click(function(){
              
             let ClassDTO={
-                CName:$('#classname').val();
-                CFees:$('#fees').val();
+                CName:$('#classname').val(),
+                CFees:$('#fees').val(),
             }
-            console.log(ClassDTO)
-            $.ajax({
-                type:'Post',
-                url:'Class/PostClass'
-                data:ClassDTO,
-                success: function (resp) {
+             $.ajax({
+                    type: 'Post',
+                    url: '/Class/PostClass',
+                    data: ClassDTO,
+                    success: function (resp) {
                         if (resp == true) {
-                            showNotification("success", "Class Registered!");
-                            $("#btnreset").click();
+                            showNotification("success", "CLass Registered!");
+                            $("#btnreset").click()
                         }
                         else {
-                            showNotification("danger", "Class Failed!");
+                            showNotification("danger", "Registration Failed!");
                         }
                     },
-            })
+                });
         })
 
+
+
+            //fees entr
+        $("#fees").keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                showNotification("danger", "Input Only Numbers");
+                return false;
+            }
+            
+        })
 
 
 

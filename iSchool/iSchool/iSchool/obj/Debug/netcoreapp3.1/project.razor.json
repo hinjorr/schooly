@@ -14417,6 +14417,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\Subjects\\GetSubject.cshtml",
+      "TargetPath": "Views\\Subjects\\GetSubject.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -14424,6 +14429,11 @@
     {
       "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\Student\\GetStudent.cshtml",
       "TargetPath": "Views\\Student\\GetStudent.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\repo\\schooly\\iSchool\\iSchool\\iSchool\\Views\\AssignSubjects\\GetAssignedSubjects.cshtml",
+      "TargetPath": "Views\\AssignSubjects\\GetAssignedSubjects.cshtml",
       "FileKind": "mvc"
     }
   ],

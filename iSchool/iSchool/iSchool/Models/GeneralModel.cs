@@ -16,6 +16,17 @@ namespace iSchool.Models
         {
             _db = db;
         }
+
+        public async Task<List<ModelDropDown>> ListClass()
+        {
+            List<ModelDropDown> data = await _db.TblClass.Select(x => new ModelDropDown
+            {
+                CId = x.CId,
+                CName = x.CName
+            }).ToListAsync();
+            return data;
+        }
+
         public async Task<List<ModelDropDown>> ListCountries()
         { // Ilist , List , Ienumerable
             List<ModelDropDown> data = await _db.TblCountries.Select(x => new ModelDropDown
@@ -27,12 +38,23 @@ namespace iSchool.Models
             return data;
         }
 
-        public async Task<List<ReligionDropDown>> ListReligions()
+        public async Task<List<ModelDropDown>> ListReligions()
         {
-            List<ReligionDropDown> data=await _db.TblReligion.Select(x => new ReligionDropDown
+            List<ModelDropDown> data=await _db.TblReligion.Select(x => new ModelDropDown
             {
                 ReligionId=x.ReligionId,
                 Religion=x.Religion
+            }).ToListAsync();
+            return data;
+        }
+
+        public async Task<List<ModelDropDown>> ListSubjects()
+        {
+            List<ModelDropDown> data= await _db.TblSubject.Select(x => new ModelDropDown
+            {
+                SubjectId=x.SubjectId,
+                SubjectName=x.SubjectName
+
             }).ToListAsync();
             return data;
         }

@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace iSchool.Repository
 {
-  public  interface IGeneral
+    public interface IGeneral
     {
         public Task<List<ModelDropDown>> ListCountries();
-        public Task<List<ReligionDropDown>> ListReligions();
+        public Task<List<ModelDropDown>> ListReligions();
+        public Task<List<ModelDropDown>> ListClass();
+        public Task<List<ModelDropDown>> ListSubjects();
+
+
 
         // ModelDropDown        string
     }

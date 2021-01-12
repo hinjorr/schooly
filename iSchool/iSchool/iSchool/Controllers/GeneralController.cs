@@ -24,5 +24,16 @@ namespace iSchool.Controllers
             var data=await _repogeneral.ListReligions();
             return Ok(data);
         }
+
+        public async Task<IActionResult> ListClass()
+        {
+            var data = await _repogeneral.ListClass();
+            return Ok(data);
+        }
+        public async Task<IActionResult> ListSubjects()
+        {
+            var data = await _repogeneral.ListSubjects();
+            return Ok(data);
+        }
     }
 }

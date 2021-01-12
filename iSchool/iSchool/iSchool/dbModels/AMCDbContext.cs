@@ -74,7 +74,7 @@ namespace iSchool.dbModels
                     .WithMany(p => p.TblAssignclass)
                     .HasForeignKey(d => d.SubjectId)
                     .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("tbl_assignclass_ibfk_1");
+                    .HasConstraintName("tbl_assignclass_ibfk_3");
             });
 
             modelBuilder.Entity<TblClass>(entity =>
@@ -298,8 +298,7 @@ namespace iSchool.dbModels
 
                 entity.Property(e => e.SubjectId)
                     .HasColumnName("Subject_id")
-                    .HasColumnType("int(11)")
-                    .ValueGeneratedNever();
+                    .HasColumnType("int(11)");
 
                 entity.Property(e => e.SubjectName)
                     .IsRequired()
